@@ -1,0 +1,21 @@
+{% extends 'main/pattern.html' %}
+{% load static %}
+
+{% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/home_css.css' %}">{% endblock %}
+{% block content %}
+<main>
+    <h2>Ласкаво просимо на фонетичний сайт!</h2>
+    <div>
+    <div class="alert alert-custom  fade in alert-dismissable show mt-2" style="font-size: 16px;
+    text-indent: 3ch; color: #2F4F4F;">
+        <p>Якщо ви вивчаєте українську та <strong>бажаєте мати бездоганну вимову</strong>,
+            ця вебсторінка саме для вас!</p>
+        <p>Якщо ви <strong>цікавитеся українською фонетикою</strong> з якихось інших причин - вона
+            також для вас!</p>
+        <p>Тут ви можете ознайомитися із <a href="allsounds"><u>системою українських звуків</u></a>,
+            <a href="pictures"><u>особливостями їх вимови</u></a> та <a href="pronunciation_checker"><u>
+                потренувати власну вимову</u></a>.</p>
+    </div>
+    </div>
+</main>
+{% endblock %}
