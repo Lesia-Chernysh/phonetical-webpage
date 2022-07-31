@@ -1,0 +1,27 @@
+h2{
+    padding-top: 120px;
+    text-align: center;
+}
+
+p {
+    margin-top: 10px;
+    width: 80%;
+    height:70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:auto;
+    text-align: left;
+}
+
+.alert-custom{
+  margin-left: auto;
+  margin-right: auto;
+  background-color:#FFE4E1;
+  color:#2F4F4F;
+  width: 70%;
+ }
+a {color: #2F4F4F;}
+a:hover {
+    color: #F08080;
+    transform: scale(1.03);
+}
