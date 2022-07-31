@@ -30,7 +30,7 @@ SECRET_KEY = 'zyg2xh$)k4_$s*ylv0!i_$@mh^v!^w-_&o$01#7=(#s!8(c7$@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ukrsounds.com', 'www.ukrsounds.com', '127.0.0.1']
+ALLOWED_HOSTS = ['ukrsounds.com', 'www.ukrsounds.com', '127.0.0.1', '0.0.0.0', 'https://radiant-inlet-98920.herokuapp.com/']
 
 
 # Application definition
