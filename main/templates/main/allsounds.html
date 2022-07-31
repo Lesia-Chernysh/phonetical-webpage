@@ -1,0 +1,672 @@
+{% extends 'main/pattern.html' %}
+{% load static %}
+{% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/tables.css' %}">{% endblock %}
+
+{% block content %}
+<h4>Голосні звуки</h4>
+<div style="margin-left: 30px; margin-right: 30px; margin-top: 15px; font-size:16px; text-indent: 3ch; padding:0px;
+line-height: 25px; color: #2F4F4F;">
+  <p>Голосні в українській мові бувають двох <i><strong>рядів</strong></i>: <i>переднього</i> та <i>заднього</i>.
+  Якщо голосний належить до <i>переднього ряду</i>, це означає, що під час його вимови тіло язика подається
+  вперед. Якщо ж голосний належить до <i>заднього ряду</i>, то тіло язика під час його вимови відтягнене назад,
+  до стінки глотки.</p>
+  <p>Також українські голосні розрізняють за <i><strong>ступенем підняття</strong></i> язика до твердого
+  піднебіння під час їх вимови. В деяких джерелах таку класифікацію здійснюють, залежно від
+  ступеня закритості щелеп під час вимови голосних. Тоді звуки поділяють на відкриті, середні та
+  закриті. Ступінь підняття язика напряму пов'язаний із відкритістю/закритістю звука, тому наведені
+  класифікації є взаємозамінними. В українській науковій літературі поширеною є класифікація
+  за ступенем підняття язика, тому саме з нею ви можете ознайомитися в розміщенній нижче таблиці.</p>
+  <p>Для того, аби <strong>переглянути інформацію</strong> про особливості вимови звука,
+    який вас цікавить, натисніть на нього курсором.</p>
+</div>
+<div class="Vowels">
+<table style="width:60%">
+  <tr>
+    <th>&nbsp;</th>
+    <th>Передній ряд</th>
+    <th>Середній ряд</th>
+    <th>Задній ряд</th>
+  </tr>
+  <tr>
+    <th>Високе підняття</th>
+    <td><a href="/sound_i">і</a></td>
+    <td>&nbsp;</td>
+    <td><a href="/sound_u">u</a></td>
+  </tr>
+  <tr>
+    <th>Високо-середнє підняття</th>
+    <td><a href="/sound_ɪ">ɪ</a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <th>Середнє підняття</th>
+    <td><a href="/sound_ɛ">ɛ</a></td>
+    <td>&nbsp;</td>
+    <td><a href="/sound_ɔ">ɔ</a></td>
+  </tr>
+  <tr>
+    <th>Низьке підняття</th>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href="/sound_ɑ">ɑ</a></td>
+  </tr>
+</table>
+</div>
+
+<h4>Приголосні звуки</h4>
+<div class="buttons" style="margin-left:180px;">
+  <button type="button" style="border-radius: 4px; background: #2F4F4F; color: #FFE4E1;"
+          onclick="Hard()">Тверді</button>
+  <button type="button" style="border-radius: 4px; background: #2F4F4F; color: #FFE4E1;"
+          onclick="Soft()">М'які</button>
+  <button type="button" style="border-radius: 4px; background: #2F4F4F; color: #FFE4E1;"
+          onclick="Voiced()">Дзвінкі</button>
+  <button type="button" style="border-radius: 4px; background: #2F4F4F; color: #FFE4E1;"
+          onclick="Voiceless()">Глухі</button>
+  <button type="button" style="border-radius: 4px; background: #2F4F4F; color: #FFE4E1;
+       " onclick="All()">Всі</button>
+</div>
+<div>
+<table id="demo">
+  <tr>
+    <th rowspan="2">&nbsp;</th>
+    <th rowspan="2">&nbsp;</th>
+    <th colspan="2">Губні</th>
+    <th colspan="3">Язикові</th>
+    <th rowspan="2">Глоткові</th>
+  </tr>
+  <tr>
+    <th>Губно-губні</th>
+    <th>Губно-зубні</th>
+    <th>Передньоязикові</th>
+    <th>Середньоязикові</th>
+    <th>Задньоязикові</th>
+  </tr>
+  <tr>
+    <th rowspan="3">Шумні</th>
+    <th>Зімкненні</th>
+    <td><a id="hard1" href="/sound_b_p">b p</a></td>
+    <td></td>
+    <td><a id="hard2" href="/sound_d_t">d̪ t̪</a> <br>
+        <a id="soft1" href="/sound_dj_tj">d&#x02B2
+          t&#x02B2</a><!--superscript j--></td>
+    <td></td>
+    <td><a id="hard3" href="/sound_g_k">g k</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>Щілинні</th>
+    <td></td>
+    <td><a id="hard4" href="/sound_f">f</a></td>
+    <td><a id="hard5" href="/sound_ʒ_ʃ">ʒ ʃ</a> <br><!--superscript j-->
+        <a id="hard6" href="/sound_z_s">z s</a> <br>
+        <a id="soft2" href="/sound_zj_sj">z&#x02B2 s&#x02B2</a>
+        </td>
+    <td></td>
+    <td><a id="hard7" href="/sound_x">x</a></td>
+    <td><a id="hard8" href="/sound_ɦ">ɦ</a></td>
+  </tr>
+
+  <tr>
+    <th>Африкати</th>
+    <td></td>
+    <td></td>
+    <td><a id="hard9" href="/sound_dz_ts">dz ts</a> <br>
+        <a id="hard10" href="/sound_dʒ_tʃ">dʒ tʃ</a><!--superscript j--> <br>
+        <a id="soft3" href="/sound_dzj_tsj">dz&#x02B2 ts&#x02B2</a>
+    </td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <th rowspan="2">Сонорні</th>
+    <th>Зімкненні носові</th>
+    <td><a id="hard11" href="/sound_m">m</a></td>
+    <td></td>
+    <td><a id="hard12" href="/sound_n">n̪</a> <br>
+        <a id="soft4" href="/sound_nj">n&#x02B2</a><!--superscript j--></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <th>Щілинні</th>
+    <td><a id="hard13" href="/sound_w">w</a></td>
+    <td><a id="hard14" href="/sound_v">v</a></td>
+    <td><a id="hard15" href="/sound_r">r</a> <br>
+        <a id="hard16" href="/sound_l">l</a> <br>
+        <a id="soft5" href="/sound_rj">r&#x02B2</a> <br>
+        <a id="soft6" href="/sound_lj">l&#x02B2</a></td>
+    <td><a id="soft7" href="/sound_j">j</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+  <script>
+    function Hard(){
+      var Table = document.getElementById("demo");
+      var hard1 = document.getElementById("hard1");
+      var hard2 = document.getElementById("hard2");
+      var hard3 = document.getElementById("hard3");
+      var hard4 = document.getElementById("hard4");
+      var hard5 = document.getElementById("hard5");
+      var hard6 = document.getElementById("hard6");
+      var hard7 = document.getElementById("hard7");
+      var hard8 = document.getElementById("hard8");
+      var hard9 = document.getElementById("hard9");
+      var hard10 = document.getElementById("hard10");
+      var hard11 = document.getElementById("hard11");
+      var hard12 = document.getElementById("hard12");
+      var hard13 = document.getElementById("hard13");
+      var hard14 = document.getElementById("hard14");
+      var hard15 = document.getElementById("hard15");
+      var hard16 = document.getElementById("hard16");
+      var soft1 = document.getElementById("soft1");
+      var soft2 = document.getElementById("soft2");
+      var soft3 = document.getElementById("soft3");
+      var soft4 = document.getElementById("soft4");
+      var soft5 = document.getElementById("soft5");
+      var soft6 = document.getElementById("soft6");
+      var soft7 = document.getElementById("soft7");
+      var clockButton1 = document.getElementById('hard1');
+      var clockButton2 = document.getElementById('hard2');
+      var clockButton3 = document.getElementById('soft1');
+      var clockButton4 = document.getElementById('hard3');
+      var clockButton5 = document.getElementById('hard4');
+      var clockButton6 = document.getElementById('hard5');
+      var clockButton7 = document.getElementById('hard6');
+      var clockButton8 = document.getElementById('soft2');
+      var clockButton9 = document.getElementById('hard7');
+      var clockButton10 = document.getElementById('hard8');
+      var clockButton11 = document.getElementById('hard9');
+      var clockButton12 = document.getElementById('hard10');
+      var clockButton13 = document.getElementById('soft3');
+      var clockButton14 = document.getElementById('hard11');
+      var clockButton15 = document.getElementById('hard12');
+      var clockButton16 = document.getElementById('soft4');
+      var clockButton17 = document.getElementById('hard13');
+      var clockButton18 = document.getElementById('hard14');
+      var clockButton19 = document.getElementById('hard15');
+      var clockButton20 = document.getElementById('hard16');
+      var clockButton21 = document.getElementById('soft5');
+      var clockButton22 = document.getElementById('soft6');
+      var clockButton23 = document.getElementById('soft7');
+
+      displaySetting = 'compact'
+      if (displaySetting == 'compact') {
+        // Table is visible. hide it
+        soft1.style.display = 'compact';
+        soft2.style.display = 'compact';
+        soft3.style.display = 'compact';
+        soft4.style.display = 'compact';
+        soft5.style.display = 'compact';
+        soft6.style.display = 'compact';
+        soft7.style.display = 'compact';
+        hard1.style.display = 'compact';
+        hard2.style.display = 'compact';
+        hard3.style.display = 'compact';
+        hard4.style.display = 'compact';
+        hard5.style.display = 'compact';
+        hard6.style.display = 'compact';
+        hard7.style.display = 'compact';
+        hard8.style.display = 'compact';
+        hard9.style.display = 'compact';
+        hard10.style.display = 'compact';
+        hard11.style.display = 'compact';
+        hard12.style.display = 'compact';
+        hard13.style.display = 'compact';
+        hard14.style.display = 'compact';
+        hard15.style.display = 'compact';
+        hard16.style.display = 'compact';
+        // change button text
+        clockButton1.innerHTML = 'b p';
+        clockButton2.innerHTML = 'd̪ t̪';
+        clockButton3.innerHTML = '';
+        clockButton4.innerHTML = 'g k';
+        clockButton5.innerHTML = 'f';
+        clockButton6.innerHTML = 'ʒ ʃ';
+        clockButton7.innerHTML = 'z s';
+        clockButton8.innerHTML = '';
+        clockButton9.innerHTML = 'x';
+        clockButton10.innerHTML = 'ɦ';
+        clockButton11.innerHTML = 'dz ts';
+        clockButton12.innerHTML = 'dʒ tʃ';
+        clockButton13.innerHTML = '';
+        clockButton14.innerHTML = 'm';
+        clockButton15.innerHTML = 'n̪';
+        clockButton16.innerHTML = '';
+        clockButton17.innerHTML = 'w';
+        clockButton18.innerHTML = 'v';
+        clockButton19.innerHTML = 'r';
+        clockButton20.innerHTML = 'l';
+        clockButton21.innerHTML = '';
+        clockButton22.innerHTML = '';
+        clockButton23.innerHTML = '';
+        }
+    }
+
+
+
+
+    function Soft(){
+      var Table = document.getElementById("demo");
+      var hard1 = document.getElementById("hard1");
+      var hard2 = document.getElementById("hard2");
+      var hard3 = document.getElementById("hard3");
+      var hard4 = document.getElementById("hard4");
+      var hard5 = document.getElementById("hard5");
+      var hard6 = document.getElementById("hard6");
+      var hard7 = document.getElementById("hard7");
+      var hard8 = document.getElementById("hard8");
+      var hard9 = document.getElementById("hard9");
+      var hard10 = document.getElementById("hard10");
+      var hard11 = document.getElementById("hard11");
+      var hard12 = document.getElementById("hard12");
+      var hard13 = document.getElementById("hard13");
+      var hard14 = document.getElementById("hard14");
+      var hard15 = document.getElementById("hard15");
+      var hard16 = document.getElementById("hard16");
+      var soft1 = document.getElementById("soft1");
+      var soft2 = document.getElementById("soft2");
+      var soft3 = document.getElementById("soft3");
+      var soft4 = document.getElementById("soft4");
+      var soft5 = document.getElementById("soft5");
+      var soft6 = document.getElementById("soft6");
+      var soft7 = document.getElementById("soft7");
+      var clockButton1 = document.getElementById('hard1');
+      var clockButton2 = document.getElementById('hard2');
+      var clockButton3 = document.getElementById('soft1');
+      var clockButton4 = document.getElementById('hard3');
+      var clockButton5 = document.getElementById('hard4');
+      var clockButton6 = document.getElementById('hard5');
+      var clockButton7 = document.getElementById('hard6');
+      var clockButton8 = document.getElementById('soft2');
+      var clockButton9 = document.getElementById('hard7');
+      var clockButton10 = document.getElementById('hard8');
+      var clockButton11 = document.getElementById('hard9');
+      var clockButton12 = document.getElementById('hard10');
+      var clockButton13 = document.getElementById('soft3');
+      var clockButton14 = document.getElementById('hard11');
+      var clockButton15 = document.getElementById('hard12');
+      var clockButton16 = document.getElementById('soft4');
+      var clockButton17 = document.getElementById('hard13');
+      var clockButton18 = document.getElementById('hard14');
+      var clockButton19 = document.getElementById('hard15');
+      var clockButton20 = document.getElementById('hard16');
+      var clockButton21 = document.getElementById('soft5');
+      var clockButton22 = document.getElementById('soft6');
+      var clockButton23 = document.getElementById('soft7');
+
+      displaySetting = 'compact'
+      if (displaySetting == 'compact') {
+        // Table is visible. hide it
+        soft1.style.display = 'compact';
+        soft2.style.display = 'compact';
+        soft3.style.display = 'compact';
+        soft4.style.display = 'compact';
+        soft5.style.display = 'compact';
+        soft6.style.display = 'compact';
+        soft7.style.display = 'compact';
+        hard1.style.display = 'compact';
+        hard2.style.display = 'compact';
+        hard3.style.display = 'compact';
+        hard4.style.display = 'compact';
+        hard5.style.display = 'compact';
+        hard6.style.display = 'compact';
+        hard7.style.display = 'compact';
+        hard8.style.display = 'compact';
+        hard9.style.display = 'compact';
+        hard10.style.display = 'compact';
+        hard11.style.display = 'compact';
+        hard12.style.display = 'compact';
+        hard13.style.display = 'compact';
+        hard14.style.display = 'compact';
+        hard15.style.display = 'compact';
+        hard16.style.display = 'compact';
+        // change button text
+        clockButton1.innerHTML = '';
+        clockButton2.innerHTML = '';
+        clockButton3.innerHTML = 'd&#x02B2 t&#x02B2';
+        clockButton4.innerHTML = '';
+        clockButton5.innerHTML = '';
+        clockButton6.innerHTML = '';
+        clockButton7.innerHTML = '';
+        clockButton8.innerHTML = 'z&#x02B2 s&#x02B2';
+        clockButton9.innerHTML = '';
+        clockButton10.innerHTML = '';
+        clockButton11.innerHTML = '';
+        clockButton12.innerHTML = '';
+        clockButton13.innerHTML = 'dz&#x02B2 ts&#x02B2';
+        clockButton14.innerHTML = '';
+        clockButton15.innerHTML = '';
+        clockButton16.innerHTML = 'n&#x02B2';
+        clockButton17.innerHTML = '';
+        clockButton18.innerHTML = '';
+        clockButton19.innerHTML = '';
+        clockButton20.innerHTML = '';
+        clockButton21.innerHTML = 'r&#x02B2';
+        clockButton22.innerHTML = 'l&#x02B2';
+        clockButton23.innerHTML = 'j';
+        }
+    }
+
+
+    function Voiced(){
+      var Table = document.getElementById("demo");
+      var hard1 = document.getElementById("hard1");
+      var hard2 = document.getElementById("hard2");
+      var hard3 = document.getElementById("hard3");
+      var hard4 = document.getElementById("hard4");
+      var hard5 = document.getElementById("hard5");
+      var hard6 = document.getElementById("hard6");
+      var hard7 = document.getElementById("hard7");
+      var hard8 = document.getElementById("hard8");
+      var hard9 = document.getElementById("hard9");
+      var hard10 = document.getElementById("hard10");
+      var hard11 = document.getElementById("hard11");
+      var hard12 = document.getElementById("hard12");
+      var hard13 = document.getElementById("hard13");
+      var hard14 = document.getElementById("hard14");
+      var hard15 = document.getElementById("hard15");
+      var hard16 = document.getElementById("hard16");
+      var soft1 = document.getElementById("soft1");
+      var soft2 = document.getElementById("soft2");
+      var soft3 = document.getElementById("soft3");
+      var soft4 = document.getElementById("soft4");
+      var soft5 = document.getElementById("soft5");
+      var soft6 = document.getElementById("soft6");
+      var soft7 = document.getElementById("soft7");
+      // get the current value of the Table's display property
+      var displaySetting = hard1.style.display;
+      var clockButton1 = document.getElementById('hard1');
+      var clockButton2 = document.getElementById('hard2');
+      var clockButton3 = document.getElementById('soft1');
+      var clockButton4 = document.getElementById('hard3');
+      var clockButton5 = document.getElementById('hard4');
+      var clockButton6 = document.getElementById('hard5');
+      var clockButton7 = document.getElementById('hard6');
+      var clockButton8 = document.getElementById('soft2');
+      var clockButton9 = document.getElementById('hard7');
+      var clockButton10 = document.getElementById('hard8');
+      var clockButton11 = document.getElementById('hard9');
+      var clockButton12 = document.getElementById('hard10');
+      var clockButton13 = document.getElementById('soft3');
+      var clockButton14 = document.getElementById('hard11');
+      var clockButton15 = document.getElementById('hard12');
+      var clockButton16 = document.getElementById('soft4');
+      var clockButton17 = document.getElementById('hard13');
+      var clockButton18 = document.getElementById('hard14');
+      var clockButton19 = document.getElementById('hard15');
+      var clockButton20 = document.getElementById('hard16');
+      var clockButton21 = document.getElementById('soft5');
+      var clockButton22 = document.getElementById('soft6');
+      var clockButton23 = document.getElementById('soft7');
+
+      displaySetting = 'block'
+      if (displaySetting == 'block') {
+        // Table is visible. hide it
+        soft1.style.display = 'compact';
+        soft2.style.display = 'compact';
+        soft3.style.display = 'compact';
+        soft4.style.display = 'compact';
+        soft5.style.display = 'compact';
+        soft6.style.display = 'compact';
+        soft7.style.display = 'compact';
+        hard1.style.display = 'compact';
+        hard2.style.display = 'compact';
+        hard3.style.display = 'compact';
+        hard4.style.display = 'compact';
+        hard5.style.display = 'compact';
+        hard6.style.display = 'compact';
+        hard7.style.display = 'compact';
+        hard8.style.display = 'compact';
+        hard9.style.display = 'compact';
+        hard10.style.display = 'compact';
+        hard11.style.display = 'compact';
+        hard12.style.display = 'compact';
+        hard13.style.display = 'compact';
+        hard14.style.display = 'compact';
+        hard15.style.display = 'compact';
+        hard16.style.display = 'compact';
+        // change button text
+        clockButton1.innerHTML = 'b';
+        clockButton2.innerHTML = 'd̪';
+        clockButton3.innerHTML = 'd&#x02B2';
+        clockButton4.innerHTML = 'g';
+        clockButton5.innerHTML = '';
+        clockButton6.innerHTML = 'ʒ';
+        clockButton7.innerHTML = 'z';
+        clockButton8.innerHTML = 'z&#x02B2';
+        clockButton9.innerHTML = '';
+        clockButton10.innerHTML = 'ɦ';
+        clockButton11.innerHTML = 'dz';
+        clockButton12.innerHTML = 'dʒ';
+        clockButton13.innerHTML = 'dz&#x02B2';
+        clockButton14.innerHTML = 'm';
+        clockButton15.innerHTML = 'n̪';
+        clockButton16.innerHTML = 'n&#x02B2';
+        clockButton17.innerHTML = 'w';
+        clockButton18.innerHTML = 'v';
+        clockButton19.innerHTML = 'l';
+        clockButton20.innerHTML = 'r';
+        clockButton21.innerHTML = 'r&#x02B2';
+        clockButton22.innerHTML = 'l&#x02B2';
+        clockButton23.innerHTML = 'j';
+      }
+    }
+
+
+    function Voiceless(){
+      var Table = document.getElementById("demo");
+      var hard1 = document.getElementById("hard1");
+      var hard2 = document.getElementById("hard2");
+      var hard3 = document.getElementById("hard3");
+      var hard4 = document.getElementById("hard4");
+      var hard5 = document.getElementById("hard5");
+      var hard6 = document.getElementById("hard6");
+      var hard7 = document.getElementById("hard7");
+      var hard8 = document.getElementById("hard8");
+      var hard9 = document.getElementById("hard9");
+      var hard10 = document.getElementById("hard10");
+      var hard11 = document.getElementById("hard11");
+      var hard12 = document.getElementById("hard12");
+      var hard13 = document.getElementById("hard13");
+      var hard14 = document.getElementById("hard14");
+      var hard15 = document.getElementById("hard15");
+      var hard16 = document.getElementById("hard16");
+      var soft1 = document.getElementById("soft1");
+      var soft2 = document.getElementById("soft2");
+      var soft3 = document.getElementById("soft3");
+      var soft4 = document.getElementById("soft4");
+      var soft5 = document.getElementById("soft5");
+      var soft6 = document.getElementById("soft6");
+      var soft7 = document.getElementById("soft7");
+      // get the current value of the Table's display property
+      var displaySetting = hard1.style.display;
+      var clockButton1 = document.getElementById('hard1');
+      var clockButton2 = document.getElementById('hard2');
+      var clockButton3 = document.getElementById('soft1');
+      var clockButton4 = document.getElementById('hard3');
+      var clockButton5 = document.getElementById('hard4');
+      var clockButton6 = document.getElementById('hard5');
+      var clockButton7 = document.getElementById('hard6');
+      var clockButton8 = document.getElementById('soft2');
+      var clockButton9 = document.getElementById('hard7');
+      var clockButton10 = document.getElementById('hard8');
+      var clockButton11 = document.getElementById('hard9');
+      var clockButton12 = document.getElementById('hard10');
+      var clockButton13 = document.getElementById('soft3');
+      var clockButton14 = document.getElementById('hard11');
+      var clockButton15 = document.getElementById('hard12');
+      var clockButton16 = document.getElementById('soft4');
+      var clockButton17 = document.getElementById('hard13');
+      var clockButton18 = document.getElementById('hard14');
+      var clockButton19 = document.getElementById('hard15');
+      var clockButton20 = document.getElementById('hard16');
+      var clockButton21 = document.getElementById('soft5');
+      var clockButton22 = document.getElementById('soft6');
+      var clockButton23 = document.getElementById('soft7');
+
+      displaySetting = 'block'
+      if (displaySetting == 'block') {
+        // Table is visible. hide it
+        soft1.style.display = 'compact';
+        soft2.style.display = 'compact';
+        soft3.style.display = 'compact';
+        soft4.style.display = 'compact';
+        soft5.style.display = 'compact';
+        soft6.style.display = 'compact';
+        soft7.style.display = 'compact';
+        hard1.style.display = 'compact';
+        hard2.style.display = 'compact';
+        hard3.style.display = 'compact';
+        hard4.style.display = 'compact';
+        hard5.style.display = 'compact';
+        hard6.style.display = 'compact';
+        hard7.style.display = 'compact';
+        hard8.style.display = 'compact';
+        hard9.style.display = 'compact';
+        hard10.style.display = 'compact';
+        hard11.style.display = 'compact';
+        hard12.style.display = 'compact';
+        hard13.style.display = 'compact';
+        hard14.style.display = 'compact';
+        hard15.style.display = 'compact';
+        hard16.style.display = 'compact';
+        // change button text
+        clockButton1.innerHTML = 'p';
+        clockButton2.innerHTML = 't̪';
+        clockButton3.innerHTML = 't&#x02B2';
+        clockButton4.innerHTML = 'k';
+        clockButton5.innerHTML = 'f';
+        clockButton6.innerHTML = 'ʃ';
+        clockButton7.innerHTML = 's';
+        clockButton8.innerHTML = 's&#x02B2';
+        clockButton9.innerHTML = 'x';
+        clockButton10.innerHTML = '';
+        clockButton11.innerHTML = 'ts';
+        clockButton12.innerHTML = 'tʃ';
+        clockButton13.innerHTML = 'ts&#x02B2';
+        clockButton14.innerHTML = '';
+        clockButton15.innerHTML = '';
+        clockButton16.innerHTML = '';
+        clockButton17.innerHTML = '';
+        clockButton18.innerHTML = '';
+        clockButton19.innerHTML = '';
+        clockButton20.innerHTML = '';
+        clockButton21.innerHTML = '';
+        clockButton22.innerHTML = '';
+        clockButton23.innerHTML = '';
+      }
+    }
+
+
+    function All(){
+      var Table = document.getElementById("demo");
+      var hard1 = document.getElementById("hard1");
+      var hard2 = document.getElementById("hard2");
+      var hard3 = document.getElementById("hard3");
+      var hard4 = document.getElementById("hard4");
+      var hard5 = document.getElementById("hard5");
+      var hard6 = document.getElementById("hard6");
+      var hard7 = document.getElementById("hard7");
+      var hard8 = document.getElementById("hard8");
+      var hard9 = document.getElementById("hard9");
+      var hard10 = document.getElementById("hard10");
+      var hard11 = document.getElementById("hard11");
+      var hard12 = document.getElementById("hard12");
+      var hard13 = document.getElementById("hard13");
+      var hard14 = document.getElementById("hard14");
+      var hard15 = document.getElementById("hard15");
+      var hard16 = document.getElementById("hard16");
+      var soft1 = document.getElementById("soft1");
+      var soft2 = document.getElementById("soft2");
+      var soft3 = document.getElementById("soft3");
+      var soft4 = document.getElementById("soft4");
+      var soft5 = document.getElementById("soft5");
+      var soft6 = document.getElementById("soft6");
+      var soft7 = document.getElementById("soft7");
+      var clockButton1 = document.getElementById('hard1');
+      var clockButton2 = document.getElementById('hard2');
+      var clockButton3 = document.getElementById('soft1');
+      var clockButton4 = document.getElementById('hard3');
+      var clockButton5 = document.getElementById('hard4');
+      var clockButton6 = document.getElementById('hard5');
+      var clockButton7 = document.getElementById('hard6');
+      var clockButton8 = document.getElementById('soft2');
+      var clockButton9 = document.getElementById('hard7');
+      var clockButton10 = document.getElementById('hard8');
+      var clockButton11 = document.getElementById('hard9');
+      var clockButton12 = document.getElementById('hard10');
+      var clockButton13 = document.getElementById('soft3');
+      var clockButton14 = document.getElementById('hard11');
+      var clockButton15 = document.getElementById('hard12');
+      var clockButton16 = document.getElementById('soft4');
+      var clockButton17 = document.getElementById('hard13');
+      var clockButton18 = document.getElementById('hard14');
+      var clockButton19 = document.getElementById('hard15');
+      var clockButton20 = document.getElementById('hard16');
+      var clockButton21 = document.getElementById('soft5');
+      var clockButton22 = document.getElementById('soft6');
+      var clockButton23 = document.getElementById('soft7');
+
+      displaySetting = 'compact'
+      if (displaySetting == 'compact') {
+        // Table is visible. hide it
+        soft1.style.display = 'compact';
+        soft2.style.display = 'compact';
+        soft3.style.display = 'compact';
+        soft4.style.display = 'compact';
+        soft5.style.display = 'compact';
+        soft6.style.display = 'compact';
+        soft7.style.display = 'compact';
+        hard1.style.display = 'compact';
+        hard2.style.display = 'compact';
+        hard3.style.display = 'compact';
+        hard4.style.display = 'compact';
+        hard5.style.display = 'compact';
+        hard6.style.display = 'compact';
+        hard7.style.display = 'compact';
+        hard8.style.display = 'compact';
+        hard9.style.display = 'compact';
+        hard10.style.display = 'compact';
+        hard11.style.display = 'compact';
+        hard12.style.display = 'compact';
+        hard13.style.display = 'compact';
+        hard14.style.display = 'compact';
+        hard15.style.display = 'compact';
+        hard16.style.display = 'compact';
+        // change button text
+        clockButton1.innerHTML = 'b p';
+        clockButton2.innerHTML = 'd̪ t̪';
+        clockButton3.innerHTML = 'd&#x02B2 t&#x02B2';
+        clockButton4.innerHTML = 'g k';
+        clockButton5.innerHTML = 'f';
+        clockButton6.innerHTML = 'ʒ ʃ';
+        clockButton7.innerHTML = 'z s';
+        clockButton8.innerHTML = 'z&#x02B2 s&#x02B2';
+        clockButton9.innerHTML = 'x';
+        clockButton10.innerHTML = 'ɦ';
+        clockButton11.innerHTML = 'dz ts';
+        clockButton12.innerHTML = 'dʒ tʃ';
+        clockButton13.innerHTML = 'dz&#x02B2 ts&#x02B2';
+        clockButton14.innerHTML = 'm';
+        clockButton15.innerHTML = 'n̪';
+        clockButton16.innerHTML = 'n&#x02B2';
+        clockButton17.innerHTML = 'w';
+        clockButton18.innerHTML = 'v';
+        clockButton19.innerHTML = 'r';
+        clockButton20.innerHTML = 'l';
+        clockButton21.innerHTML = 'r&#x02B2';
+        clockButton22.innerHTML = 'l&#x02B2';
+        clockButton23.innerHTML = 'j';
+        }
+    }
+  </script>
+</div>
+
+{% endblock %}
