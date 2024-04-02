@@ -2,171 +2,219 @@
 {% load static %}
 
 {% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/illustration_css.css' %}">{% endblock %}
+
 {% block content %}
 <main>
-    <div class="vowels">
-        <h3>Голосні</h3>
-        <h4>Голосні переднього ряду</h4>
+    <div class="sidebar">
+        <p style="font-size: 18px;">Content:</p>
+        <p style="font-size: 14px; margin-bottom:0px;">Vowels:</p>
+        <ul>
+            <li><a href="#[ɪ] vs [i]">[ɪ] vs [i]</a></li>
+        </ul>
+        <p style="font-size: 14px; margin-bottom:0px;">Plain vs palatalized:</p>
+        <ul>
+            <li><a href="#[d̪] vs [dʲ]">[d̪] vs [dʲ]</a></li>
+            <li><a href="#[t̪] vs [tʲ]">[t̪] vs [tʲ]</a></li>
+            <li><a href="#[dz] vs [dzʲ]">[dz] vs [dzʲ]</a></li>
+            <li><a href="#[ts] vs [tsʲ]">[ts] vs [tsʲ]</a></li>
+            <li><a href="#[l] vs [lʲ]">[l] vs [lʲ]</a></li>
+            <li><a href="#[r] vs [rʲ]">[r] vs [rʲ]</a></li>
+        </ul>
+        <p style="font-size: 14px; margin-bottom:0px;">Others:</p>
+        <ul>
+            <li><a href="#[p] vs [f]">[p] vs [f]</a></li>
+            <li><a href="#[g] - [x] - [ɦ]">[g] - [x] - [ɦ]</a></li>
+        </ul>
+    </div>
 
+    <div class="vowels">
+        <h3>Vowels</h3>
+        <h4 id = '[ɪ] vs [i]'>[ɪ] vs [i]</h4>
         <div class="front_row">
         {% for el in information%}
-            <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <h5>Артикуляція звука {{el.sound}}</h5>
-                <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <p>{{el.description}}</p>
-            </div>
+            {% if el.sound == '[і]' or el.sound == '[ɪ]' %}
+                <div class="alert alert-custom  fade in alert-dismissable show mt-2">
+                    <h5>Articulation of {{el.sound}}</h5>
+                    <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
+                    <figure>
+                        <audio style="width: 100%;" controls src={{el.audio.url}}>
+                        Your browser does not support the <code>audio</code> element.
+                        </audio>
+                    </figure>
+                </div>
+            {%endif%}
         {%endfor%}
         </div>
-
-
-        <h4>Голосні заднього ряду</h4>
-        <div class="back_row">
-            {% for el in information2%}
-            <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <h5>Артикуляція звука {{el.sound}}</h5>
-                <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <p>{{el.description}}</p>
-            </div>
-        {%endfor%}
-        </div>
-
+        <div style="width:70%; margin-left: auto; margin-right: auto; color:#2F4F4F; white-space: pre-line;">
+            <p>It might be important to differentiate these two vowels, as in some cases they are the only sounds making a difference between two words. For example: <i>дим-дім</i> [d̪ɪm]-[d̪im] (smoke-house), <i>лис-ліс</i> [lɪs]-[lʲis] (fox-forest),<i>злива-зліва</i> ['zlɪva]-['zlʲiva] (heavy rain - on the left) ect.
+                Both sounds belong to front vowels, and for a non-native speaker they might sound very similar. However, there are differences in articulation: during the pronunciation of [ɪ] the tongue is placed lower compared to [i].
+                Try yourself, using the pictures and the audios.
+            </p></div>
     </div>
 
     <div class="consonants">
-        <h3>Приголосні</h3>
-        <h4>Губні</h4>
-        <h5>Губно-губні</h5>
-
-        <div class="bilabial">
-        {% for el in information3%}
+        <h3 style="margin-top:20px;">Plain vs palatalized</h3>
+        <h4 id="[d̪] vs [dʲ]">[d̪] vs [dʲ]</h4>
+        <div class="alveolar">
+        {% for el in information_d%}
             <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <h5>Артикуляція звука {{el.sound}}</h5>
+                <h5>Articulation of {{el.sound}}</h5>
                 <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
+                <figure>
+                        <audio style="width: 100%;" controls src={{el.audio.url}}>
+                        Your browser does not support the <code>audio</code> element.
+                        </audio>
+                </figure>
                 <p>{{el.description}}</p>
             </div>
         {%endfor%}
         </div>
 
-        <h5>Губно-зубні</h5>
-        <div class="labiodental">
-        {% for el in information4%}
+        <h4 id="[t̪] vs [tʲ]">[t̪] vs [tʲ]</h4>
+        <div class="alveolar">
+        {% for el in information_t%}
             <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <h5>Артикуляція звука {{el.sound}}</h5>
+                <h5>Articulation of {{el.sound}}</h5>
                 <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <p>{{el.description}}</p>
+                <figure>
+                        <audio style="width: 100%;" controls src={{el.audio.url}}>
+                        Your browser does not support the <code>audio</code> element.
+                        </audio>
+                </figure>
             </div>
         {%endfor%}
         </div>
 
-        <h4>Передньоязикові</h4>
-        <h5>Проривні</h5>
-        <div class="alveolar_hard">
-        {% for el in information5%}
+        <h4 id="[dz] vs [dzʲ]">[dz] vs [dzʲ]</h4>
+        <div class="alveolar">
+        {% for el in information_dz%}
             <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <h5>Артикуляція звука {{el.sound}}</h5>
+                <h5>Articulation of {{el.sound}}</h5>
                 <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <p>{{el.description}}</p>
+                <figure>
+                    <audio style="width: 100%;" controls src={{el.audio.url}}>
+                        Your browser does not support the <code>audio</code> element.
+                    </audio>
+                </figure>
             </div>
         {%endfor%}
         </div>
 
-        <h5>Щілинні</h5>
-        <div class="alveolar_hard">
-        {% for el in information6%}
+        <h4 id="[ts] vs [tsʲ]">[ts] vs [tsʲ]</h4>
+        <div class="alveolar">
+        {% for el in information_ts%}
             <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <h5>Артикуляція звука {{el.sound}}</h5>
+                <h5>Articulation of {{el.sound}}</h5>
                 <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <p>{{el.description}}</p>
+                <figure>
+                    <audio style="width: 100%;" controls src={{el.audio.url}}>
+                        Your browser does not support the <code>audio</code> element.
+                    </audio>
+                </figure>
             </div>
         {%endfor%}
         </div>
 
-        <h5>Африкати</h5>
-        <div class="alveolar_hard">
-        {% for el in information7%}
+
+        <h4 id="[l] vs [lʲ]">[l] vs [lʲ]</h4>
+        <div class="alveolar">
+        {% for el in information_l%}
             <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <h5>Артикуляція звука {{el.sound}}</h5>
+                <h5>Articulation of {{el.sound}}</h5>
                 <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <p>{{el.description}}</p>
-            </div>
-        {%endfor%}
-        </div>
-        <div class="alveolar_hard">
-        {% for el in information14%}
-            <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <h5>Артикуляція звука {{el.sound}}</h5>
-                <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <p>{{el.description}}</p>
+                <figure>
+                    <audio style="width: 100%;" controls src={{el.audio.url}}>
+                        Your browser does not support the <code>audio</code> element.
+                    </audio>
+                </figure>
             </div>
         {%endfor%}
         </div>
 
-        <h5>Апроксимальні</h5>
-        <div class="alveolar_hard">
-        {% for el in information8%}
+        <h4 id="[r] vs [rʲ]">[r] vs [rʲ]</h4>
+        <div class="alveolar">
+        {% for el in information_r%}
             <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <h5>Артикуляція звука {{el.sound}}</h5>
+                <h5>Articulation of {{el.sound}}</h5>
                 <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <p>{{el.description}}</p>
+                <figure>
+                    <audio style="width: 100%;" controls src={{el.audio.url}}>
+                        Your browser does not support the <code>audio</code> element.
+                    </audio>
+                </figure>
             </div>
         {%endfor%}
         </div>
 
-        <h5>Вібранти</h5>
-        <div class="alveolar_hard">
-        {% for el in information9%}
-            <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <h5>Артикуляція звука {{el.sound}}</h5>
-                <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <p>{{el.description}}</p>
-            </div>
-        {%endfor%}
+        <h3>Others</h3>
+        <h4 id="[p] vs [f]">[p] vs [f]</h4>
+        <div class="others">
+            {% for el in information_p %}
+                <div class="alert alert-custom  fade in alert-dismissable show mt-2">
+                    <h5>Articulation of {{el.sound}}</h5>
+                    <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
+                    <figure>
+                        <audio style="width: 100%;" controls src={{el.audio.url}}>
+                        Your browser does not support the <code>audio</code> element.
+                        </audio>
+                    </figure>
+                </div>
+            {%endfor%}
+
+            {% for el in information_f %}
+                <div class="alert alert-custom  fade in alert-dismissable show mt-2">
+                    <h5>Articulation of {{el.sound}}</h5>
+                    <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
+                    <figure>
+                        <audio style="width: 100%;" controls src={{el.audio.url}}>
+                        Your browser does not support the <code>audio</code> element.
+                        </audio>
+                    </figure>
+                </div>
+            {%endfor%}
         </div>
 
-        <h5>Передньоязикові альвеолярні</h5>
-        <div class="alveolar_hard">
-        {% for el in information10%}
-            <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <h5>Артикуляція звука {{el.sound}}</h5>
-                <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <p>{{el.description}}</p>
-            </div>
-        {%endfor%}
+        <h4 id="[g] - [x] - [ɦ]">[g] - [x] - [ɦ]</h4>
+        <div class = "others">
+            {% for el in information_g %}
+                <div class="alert alert-custom  fade in alert-dismissable show mt-2">
+                    <h5>Articulation of {{el.sound}}</h5>
+                    <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
+                    <figure>
+                        <audio style="width: 100%;" controls src={{el.audio.url}}>
+                        Your browser does not support the <code>audio</code> element.
+                        </audio>
+                    </figure>
+                </div>
+            {%endfor%}
+
+            {% for el in information_x %}
+                <div class="alert alert-custom  fade in alert-dismissable show mt-2">
+                    <h5>Articulation of {{el.sound}}</h5>
+                    <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
+                    <figure>
+                        <audio style="width: 100%;" controls src={{el.audio.url}}>
+                        Your browser does not support the <code>audio</code> element.
+                        </audio>
+                    </figure>
+                </div>
+            {%endfor%}
+
+            {% for el in information_ɦ %}
+                <div class="alert alert-custom  fade in alert-dismissable show mt-2">
+                    <h5>Articulation of {{el.sound}}</h5>
+                    <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
+                    <figure>
+                        <audio style="width: 100%;" controls src={{el.audio.url}}>
+                        Your browser does not support the <code>audio</code> element.
+                        </audio>
+                    </figure>
+                </div>
+            {%endfor%}
         </div>
 
-        <h4>Середньоязикові</h4>
-        <div class="alveolar_hard">
-        {% for el in information11%}
-            <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <h5>Артикуляція звука {{el.sound}}</h5>
-                <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <p>{{el.description}}</p>
-            </div>
-        {%endfor%}
-        </div>
 
-        <h4>Задньоязикові</h4>
-        <div class="alveolar_hard">
-        {% for el in information12%}
-            <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <h5>Артикуляція звука {{el.sound}}</h5>
-                <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <p>{{el.description}}</p>
-            </div>
-        {%endfor%}
-        </div>
 
-        <h4>Глоткові</h4>
-        <div class="alveolar_hard">
-        {% for el in information13%}
-            <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <h5>Артикуляція звука {{el.sound}}</h5>
-                <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <p>{{el.description}}</p>
-            </div>
-        {%endfor%}
-        </div>
     </div>
-
 </main>
 {% endblock %}

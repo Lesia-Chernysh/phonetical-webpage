@@ -46,12 +46,18 @@ aside ul a:hover, aside ul li:hover, aside h5 a:hover, aside h6 a:hover {
 main {
     font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px;
     margin-top: 120px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 100px;
+    margin-right: 10px;
 }
 
+.sidebar {background: #FFE4E1; position: fixed; z-index: 1; top: 0; left: 0;
+  height: 100%; width: 15%; overflow-x: hidden; padding-top: 100px;}
 
-.front_row, .bilabial, .alveolar_hard, .back_row, .labiodental{
+.sidebar > p {padding-left: 10px; margin-bottom:0px; color: #2F4F4F;}
+.sidebar > ul {padding-left:30px; color: #2F4F4F; font-style: italic;}
+.sidebar > ul a {padding-left:5px;  color: #2F4F4F; font-size: 14px;}
+
+.front_row, .others, .alveolar {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -66,13 +72,13 @@ main {
     text-align: center;
 }
 
-main p{
-    white-space: pre-line;
-}
+
+main p{font-size: 16px; white-space: pre-line;}
 
 .alert-custom{
   background-color:#FFE4E1;
   color:#2F4F4F;
   border: 1px solid;
   width:25%;
+  justify-content: center;
 }

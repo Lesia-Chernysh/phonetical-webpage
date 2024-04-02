@@ -1,0 +1,14 @@
+{% extends 'main/pattern.html' %}
+{% load static %}
+
+
+{% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/pronunciation_checker_css.css' %}">{% endblock %}
+{% block content %}
+<main>
+  <h2></h2>
+    <div class="alert alert-custom  fade in alert-dismissable show mt-2" style="font-size: 16px;
+    text-indent: 3ch; color: #2F4F4F;">
+      <p>It's our glossary.</p>
+    </div>
+</main>
+{% endblock %}

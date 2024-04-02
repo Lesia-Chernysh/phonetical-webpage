@@ -12,34 +12,40 @@ def allsounds(request):
     return render(request, 'main/allsounds.html')
 
 
-def pictures(request):
-    information = InformationAboutVowels.objects.filter(row__contains='передній').order_by('id')
-    information2 = InformationAboutVowels.objects.filter(row__contains='задній').order_by('id')
-    information3 = InformationAboutConsonants.objects.filter(place_of_articulation__contains='білабіальний').order_by('id')
-    information4 = InformationAboutConsonants.objects.filter(place_of_articulation__contains='лабіодентальний').order_by('id')
-    information5 = InformationAboutConsonants.objects.filter(place_of_articulation__contains='альвеолярний',
-                                                             way_of_articulation__contains='проривний').order_by('id')
-    information6 = InformationAboutConsonants.objects.filter(place_of_articulation__contains='альвеолярний',
-                                                             way_of_articulation__contains='щілинний').order_by('id')
-    information7 = InformationAboutConsonants.objects.filter(place_of_articulation__contains='альвеолярний',
-                                                             way_of_articulation__contains='африката',
-                                                             palatalization__contains="твердий").order_by('id')
-    information14 = InformationAboutConsonants.objects.filter(place_of_articulation__contains='альвеолярний',
-                                                             way_of_articulation__contains='африката',
-                                                              palatalization__contains="м'який").order_by('id')
+def glossary(request):
+    return render(request, 'main/glossary.html')
 
-    information8 = InformationAboutConsonants.objects.filter(way_of_articulation__contains='апроксимальний').order_by('id')
-    information9 = InformationAboutConsonants.objects.filter(way_of_articulation__contains='вібрант').order_by('id')
-    information10 = InformationAboutConsonants.objects.filter(place_of_articulation__contains='постальвеолярний').order_by('id')
-    information11 = InformationAboutConsonants.objects.filter(place_of_articulation__contains='середньоязиковий').order_by('id')
-    information12 = InformationAboutConsonants.objects.filter(place_of_articulation__contains='задньоязиковий').order_by('id')
-    information13 = InformationAboutConsonants.objects.filter(place_of_articulation__contains='глотковий').order_by('id')
+
+def pictures(request):
+    information =  InformationAboutVowels.objects.filter(row__contains='передній').order_by('id')
+    information2 = InformationAboutVowels.objects.filter(row__contains='задній').order_by('id')
+    information_p = InformationAboutConsonants.objects.filter(sound__contains='p')
+    information_f = InformationAboutConsonants.objects.filter(sound__contains='f')
+    information_d = InformationAboutConsonants.objects.filter(sound__contains='d',
+                                                              place_of_articulation__contains='альвеолярний',
+                                                              way_of_articulation__contains='проривний').order_by('id')
+
+    information_t = InformationAboutConsonants.objects.filter(sound__contains='t',
+                                                              place_of_articulation__contains='альвеолярний',
+                                                              way_of_articulation__contains='проривний').order_by('id')
+
+    information_dz = InformationAboutConsonants.objects.filter(sound__contains='dz',
+                                                             place_of_articulation__contains='альвеолярний',
+                                                             way_of_articulation__contains='африката').order_by('id')
+    information_ts = InformationAboutConsonants.objects.filter(sound__contains='ts',
+                                                               place_of_articulation__contains='альвеолярний',
+                                                               way_of_articulation__contains='африката').order_by('id')
+
+    information_l = InformationAboutConsonants.objects.filter(sound__contains='l').order_by('id')
+    information_r = InformationAboutConsonants.objects.filter(sound__contains='r').order_by('id')
+    information_g = InformationAboutConsonants.objects.filter(sound__contains='g')
+    information_x = InformationAboutConsonants.objects.filter(sound__contains='x')
+    information_ɦ = InformationAboutConsonants.objects.filter(sound__contains='ɦ')
     return render(request, 'main/pictures.html', {'information': information,'information2':information2,
-        'information3':information3, 'information4':information4, 'information5':information5,
-        'information6': information6, 'information7': information7,
-        'information8': information8, 'information9': information9,
-        'information10': information10, 'information11': information11, 'information12': information12,
-        'information13': information13, 'information14': information14})
+        'information_p':information_p, 'information_f':information_f, 'information_d':information_d,
+        'information_t': information_t, 'information_dz': information_dz, 'information_ts': information_ts,
+        'information_l': information_l, 'information_r': information_r,
+        'information_g': information_g, 'information_x': information_x, 'information_ɦ': information_ɦ})
 
 
 def pronunciation_checker(request):
@@ -115,6 +121,12 @@ def sound_zj_sj(request):
     information = InformationAboutConsonants.objects.filter(sound__contains='[zʲ]')
     information2 = InformationAboutConsonants.objects.filter(sound__contains='[sʲ]')
     return render(request, 'main/sound_zj_sj.html', {'information': information, 'information2': information2})
+
+
+def sound_g_k(request):
+    information = InformationAboutConsonants.objects.filter(sound__contains='g')
+    information2 = InformationAboutConsonants.objects.filter(sound__contains='k')
+    return render(request, 'main/sound_g_k.html', {'information': information, 'information2': information2})
 
 
 def sound_x(request):

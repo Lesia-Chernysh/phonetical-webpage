@@ -1,6 +1,7 @@
 body {
     background: white;
-    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px;
+    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+    font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px;
 }
 
 .navbar {

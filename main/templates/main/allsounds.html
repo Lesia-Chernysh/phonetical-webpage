@@ -1,106 +1,118 @@
 {% extends 'main/pattern.html' %}
 {% load static %}
-{% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/tables.css' %}">{% endblock %}
+{% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/tables_css_.css' %}">{% endblock %}
 
 {% block content %}
-<h4>Голосні звуки</h4>
-<div style="margin-left: 30px; margin-right: 30px; margin-top: 15px; font-size:16px; text-indent: 3ch; padding:0px;
-line-height: 25px; color: #2F4F4F;">
-  <p>Голосні в українській мові бувають двох <i><strong>рядів</strong></i>: <i>переднього</i> та <i>заднього</i>.
-  Якщо голосний належить до <i>переднього ряду</i>, це означає, що під час його вимови тіло язика подається
-  вперед. Якщо ж голосний належить до <i>заднього ряду</i>, то тіло язика під час його вимови відтягнене назад,
-  до стінки глотки.</p>
-  <p>Також українські голосні розрізняють за <i><strong>ступенем підняття</strong></i> язика до твердого
-  піднебіння під час їх вимови. В деяких джерелах таку класифікацію здійснюють, залежно від
-  ступеня закритості щелеп під час вимови голосних. Тоді звуки поділяють на відкриті, середні та
-  закриті. Ступінь підняття язика напряму пов'язаний із відкритістю/закритістю звука, тому наведені
-  класифікації є взаємозамінними. В українській науковій літературі поширеною є класифікація
-  за ступенем підняття язика, тому саме з нею ви можете ознайомитися в розміщенній нижче таблиці.</p>
-  <p>Для того, аби <strong>переглянути інформацію</strong> про особливості вимови звука,
-    який вас цікавить, натисніть на нього курсором.</p>
+<div class="sidebar">
+  <p>Content:</p>
+  <ul>
+    <li><a href="#vowels">Vowels</a></li>
+    <li><a href="#consonants">Consonants</a></li>
+  </ul>
+</div>
+
+<div id="vowels">
+<h4>Vowels</h4>
+<div style="margin-left: 200px; margin-right: 30px; margin-top: 15px; font-size:16px; text-indent: 3ch; padding:0px;
+  line-height: 25px; color: #2F4F4F; width: 80%;">
+  <p>There are 6 vowels in Ukrainian. You can see them in the table below, denoted with IPA symbols
+    (IPA - International Phonetic Alphabet).
+    <br> Vowel length is not contrastive, so there are no short or long vowels.
+    <br> Based on the tongue's position in respect to
+    the <i><strong>horizontal axis </strong></i> they are divided into <i><strong>front</strong></i>
+    and <i><strong>back vowels</strong></i>. In the table below one can see that sounds [i], [ɪ] and [ɛ]
+    are <i>front</i>, whereas [u], [ɔ] and [ɑ] are <i>back vowels</i>. It means that during pronunciation
+    of the first group of vowels the tongue's body lays forwards. And the second group of the vowels
+  is pronounced with the tongue's body in the back of the vowel space.</p>
+
+  <p>The position of the tongue with respect to the <i><strong>vertical axis</strong></i>, namely
+    it's <i>height</i> during pronunciation, distinguishes Ukrainian vowels as well. In the table
+  below one can see that there are <i><strong>low </strong></i> ([ɑ]), <i><strong>mid </strong></i> ([ɛ], [ɔ]),
+    <i><strong>high-mid </strong></i> ([ɪ]) and <i><strong>high </strong></i> ([i], [u]) vowels in Ukrainian.
+  It's also referred as close/open distinction between vowels, as the height of the tongue directly
+  affects the closeness of a vowel.</p>
+
+  <p>In order to <strong>watch details about the pronunciation</strong> of each sound press it's symbol in the table.</p>
 </div>
 <div class="Vowels">
 <table style="width:60%">
   <tr>
     <th>&nbsp;</th>
-    <th>Передній ряд</th>
-    <th>Середній ряд</th>
-    <th>Задній ряд</th>
+    <th>Front</th>
+    <th>Back</th>
   </tr>
   <tr>
-    <th>Високе підняття</th>
+    <th>High</th>
     <td><a href="/sound_i">і</a></td>
-    <td>&nbsp;</td>
     <td><a href="/sound_u">u</a></td>
   </tr>
   <tr>
-    <th>Високо-середнє підняття</th>
+    <th>High-mid</th>
     <td><a href="/sound_ɪ">ɪ</a></td>
-    <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <th>Середнє підняття</th>
+    <th>Mid</th>
     <td><a href="/sound_ɛ">ɛ</a></td>
-    <td>&nbsp;</td>
     <td><a href="/sound_ɔ">ɔ</a></td>
   </tr>
   <tr>
-    <th>Низьке підняття</th>
-    <td>&nbsp;</td>
+    <th>Low</th>
     <td>&nbsp;</td>
     <td><a href="/sound_ɑ">ɑ</a></td>
   </tr>
 </table>
 </div>
+</div>
 
-<h4>Приголосні звуки</h4>
+<div id="consonants">
+<h4>Consonants</h4>
 <div class="buttons" style="margin-left:180px;">
   <button type="button" style="border-radius: 4px; background: #2F4F4F; color: #FFE4E1;"
-          onclick="Hard()">Тверді</button>
+          onclick="Hard()">Plain</button>
   <button type="button" style="border-radius: 4px; background: #2F4F4F; color: #FFE4E1;"
-          onclick="Soft()">М'які</button>
+          onclick="Soft()">Palatalized</button>
   <button type="button" style="border-radius: 4px; background: #2F4F4F; color: #FFE4E1;"
-          onclick="Voiced()">Дзвінкі</button>
+          onclick="Voiced()">Voiced</button>
   <button type="button" style="border-radius: 4px; background: #2F4F4F; color: #FFE4E1;"
-          onclick="Voiceless()">Глухі</button>
+          onclick="Voiceless()">Voiceless</button>
   <button type="button" style="border-radius: 4px; background: #2F4F4F; color: #FFE4E1;
-       " onclick="All()">Всі</button>
+       " onclick="All()">All</button>
 </div>
 <div>
 <table id="demo">
   <tr>
     <th rowspan="2">&nbsp;</th>
     <th rowspan="2">&nbsp;</th>
-    <th colspan="2">Губні</th>
+    <th colspan="2">Labial</th>
     <th colspan="3">Язикові</th>
-    <th rowspan="2">Глоткові</th>
+    <th rowspan="2">Glottal</th>
   </tr>
   <tr>
-    <th>Губно-губні</th>
-    <th>Губно-зубні</th>
+    <th>Bilabial</th>
+    <th>Labio-dental</th>
     <th>Передньоязикові</th>
-    <th>Середньоязикові</th>
-    <th>Задньоязикові</th>
+    <th>Palatal</th>
+    <th>Velar</th>
   </tr>
   <tr>
     <th rowspan="3">Шумні</th>
-    <th>Зімкненні</th>
+    <th>Plosive</th>
     <td><a id="hard1" href="/sound_b_p">b p</a></td>
     <td></td>
-    <td><a id="hard2" href="/sound_d_t">d̪ t̪</a> <br>
+    <td><a id="hard2" href="/sound_d_t">d̪  t̪</a> <br>
         <a id="soft1" href="/sound_dj_tj">d&#x02B2
           t&#x02B2</a><!--superscript j--></td>
     <td></td>
-    <td><a id="hard3" href="/sound_g_k">g k</a></td>
+    <td><a id="hard3" href="/sound_g_k">g  k</a></td>
     <td></td>
   </tr>
   <tr>
-    <th>Щілинні</th>
+    <th>Fricatives</th>
     <td></td>
     <td><a id="hard4" href="/sound_f">f</a></td>
-    <td><a id="hard5" href="/sound_ʒ_ʃ">ʒ ʃ</a> <br><!--superscript j-->
-        <a id="hard6" href="/sound_z_s">z s</a> <br>
+    <td><a id="hard5" href="/sound_ʒ_ʃ">ʒ  ʃ</a> <br><!--superscript j-->
+        <a id="hard6" href="/sound_z_s">z  s</a> <br>
         <a id="soft2" href="/sound_zj_sj">z&#x02B2 s&#x02B2</a>
         </td>
     <td></td>
@@ -109,12 +121,12 @@ line-height: 25px; color: #2F4F4F;">
   </tr>
 
   <tr>
-    <th>Африкати</th>
+    <th>Affricates</th>
     <td></td>
     <td></td>
-    <td><a id="hard9" href="/sound_dz_ts">dz ts</a> <br>
-        <a id="hard10" href="/sound_dʒ_tʃ">dʒ tʃ</a><!--superscript j--> <br>
-        <a id="soft3" href="/sound_dzj_tsj">dz&#x02B2 ts&#x02B2</a>
+    <td><a id="hard9" href="/sound_dz_ts">dz  ts</a> <br>
+        <a id="hard10" href="/sound_dʒ_tʃ">dʒ  tʃ</a><!--superscript j--> <br>
+        <a id="soft3" href="/sound_dzj_tsj">dz&#x02B2  ts&#x02B2</a>
     </td>
     <td></td>
     <td></td>
@@ -122,8 +134,8 @@ line-height: 25px; color: #2F4F4F;">
   </tr>
 
   <tr>
-    <th rowspan="2">Сонорні</th>
-    <th>Зімкненні носові</th>
+    <th rowspan="2">Sonors</th>
+    <th>Nasal Stops</th>
     <td><a id="hard11" href="/sound_m">m</a></td>
     <td></td>
     <td><a id="hard12" href="/sound_n">n̪</a> <br>
@@ -134,7 +146,7 @@ line-height: 25px; color: #2F4F4F;">
   </tr>
 
   <tr>
-    <th>Щілинні</th>
+    <th>Fricatives</th>
     <td><a id="hard13" href="/sound_w">w</a></td>
     <td><a id="hard14" href="/sound_v">v</a></td>
     <td><a id="hard15" href="/sound_r">r</a> <br>
@@ -668,5 +680,5 @@ line-height: 25px; color: #2F4F4F;">
     }
   </script>
 </div>
-
+</div>
 {% endblock %}

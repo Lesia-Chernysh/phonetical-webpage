@@ -1,38 +1,40 @@
 {% extends 'main/pattern.html' %}
 {% load static %}
 
-{% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/consonants_pattern.css' %}">{% endblock %}
+{% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/consonants_pattern_.css' %}">{% endblock %}
 {% block content %}
 <main>
     <div class="header">
         <h2>{% block sound %}{% endblock %}</h2>
-        <h6>фонеми {% block phoneme %}{% endblock %}, літери {% block letter %}{% endblock %}</h6>
+        <h3>Phoneme {% block phoneme %}{% endblock %}. Letters: {% block letter %}{% endblock %}</h3>
     </div>
 
     <div class="main_content">
         {% for el in information%}
-        <h3>Артикуляція звука {{el.sound}}</h3>
+        <h3>Articulation of the sound {{el.sound}}</h3>
             <div class="alert alert-custom  fade in alert-dismissable show mt-2">
                 <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <figure><figcaption>Прослухайте аудіо запис:</figcaption>
+                <p style=" float: right; width: 40%;">{% block examples %}{% endblock %}</p>
+                <figure><figcaption>Play the audio:</figcaption>
                     <audio controls src={{el.audio.url}}>
                     Your browser does not support the <code>audio</code> element.
                     </audio>
                 </figure>
 
-                <p>{{el.description}}</p>
+                <p style="width: 50%;">{{el.description}}</p>
             </div>
         {%endfor%}
         {% for el in information2%}
-        <h3>Артикуляція звука {{el.sound}}</h3>
+        <h3>Articulation of the sound {{el.sound}}</h3>
             <div class="alert alert-custom  fade in alert-dismissable show mt-2">
                 <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <figure><figcaption>Прослухайте аудіо запис:</figcaption>
+                <p style=" float: right; width: 40%;">{% block examples2 %}{% endblock %}</p>
+                <figure><figcaption>Play the audio:</figcaption>
                     <audio controls src={{el.audio.url}}>
                     Your browser does not support the <code>audio</code> element.
                     </audio>
                 </figure>
-                <p>{{el.description}}</p>
+                <p style="width: 50%;">{{el.description}}</p>
             </div>
         {%endfor%}
     </div>
