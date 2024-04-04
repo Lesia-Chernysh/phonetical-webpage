@@ -10,34 +10,53 @@
     </div>
 
     <div class="main_content">
+        <div class="content">
+            <h5>Content</h5>
+            {% for el in information%}
+            <a href="#sound1">{{el.sound}}</a>
+            {%endfor%}
+            <ul>
+                <li><a href="#examples">In other languages</a></li>
+                <li><a href="#examples">Pertinent letter/s</a></li>
+                <li><a href="#description">Description of articulation</a></li>
+            </ul>
+            {% for el in information2%}
+            <a href="#sound2">{{el.sound}}</a>
+            {%endfor%}
+            <ul>
+                <li><a href="#examples2">In other languages</a></li>
+                <li><a href="#examples2">Pertinent letter/s</a></li>
+                <li><a href="#description2">Description of articulation</a></li>
+            </ul>
+        </div>
         {% for el in information%}
-        <h3>Articulation of the sound {{el.sound}}</h3>
+        <h3 id="sound1">Articulation of the sound {{el.sound}}</h3>
             <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <p style=" float: right; width: 40%;">{% block examples %}{% endblock %}</p>
                 <figure><figcaption>Play the audio:</figcaption>
                     <audio controls src={{el.audio.url}}>
                     Your browser does not support the <code>audio</code> element.
                     </audio>
                 </figure>
-
-                <p style="width: 50%;">{{el.description}}</p>
+                <img src={{el.image.url}} alt="Звук">
+                <p class="examples" id="examples">{% block examples %}{% endblock %}</p>
+                <p><i>Description:</i></p>
+                <p class = "description" id="description">{{el.description}}</p>
             </div>
         {%endfor%}
         {% for el in information2%}
-        <h3>Articulation of the sound {{el.sound}}</h3>
+        <h3 id="sound2">Articulation of the sound {{el.sound}}</h3>
             <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <img src={{el.image.url}} alt="Звук" style="width:250px;height:200px;">
-                <p style=" float: right; width: 40%;">{% block examples2 %}{% endblock %}</p>
                 <figure><figcaption>Play the audio:</figcaption>
                     <audio controls src={{el.audio.url}}>
                     Your browser does not support the <code>audio</code> element.
                     </audio>
                 </figure>
-                <p style="width: 50%;">{{el.description}}</p>
+                <img src={{el.image.url}} alt="Звук">
+                <p class="examples" id="examples2">{% block examples2 %}{% endblock %}</p>
+                <p><i>Description:</i></p>
+                <p class = "description" id="description2">{{el.description}}</p>
             </div>
         {%endfor%}
     </div>
-
 </main>
 {% endblock %}

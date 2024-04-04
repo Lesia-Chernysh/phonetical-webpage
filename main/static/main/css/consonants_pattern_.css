@@ -1,36 +1,61 @@
 .header {
-    margin-top: 90px;
+    margin-top: 11vw;
+    padding-bottom: 7vw;
     text-align: center;
     background: #FFE4E1;
     width: 100%;
-    height: 90px;
+    height: 9vw;
 }
-h3{
+
+.header > h2{font-size: 3vw;}
+
+.header > h3{
     text-align: center;
+    font-size: 3vw;
 }
 
 .main_content{
-    margin-top: 60px;
+    margin-top: 4vw;
     width: 50%;
-    height:70%;
     margin-left: auto;
     margin-right: auto;
+    font-size: 4vw;
 }
 
+.main_content > h3 {
+    text-align: center;
+    font-size: 3vw;
+}
+
+.content > li, a {}
+
+a {color: #2F4F4F;}
+
+a:hover, aside ul li:hover {
+    color: #F08080;
+    transform: scale(1.03);
+}
+
+audio {width: 50%;}
 
 .main_content img{
     margin-left: 20px;
     margin-bottom: 20px;
+    width:250px;
+    height:200px;
 }
 
 .main_content p{
     white-space: pre-line;
+    font-size: 1em;
 }
 
 .alert-custom{
   background-color:#FFE4E1;
   color:#2F4F4F;
 }
+
+.alert-custom > p{margin-bottom:0px;}
 /*    position: absolute;
     top: 10px;
     left: 300px;
@@ -40,3 +65,69 @@ h3{
     margin-left: 70px;
     margin-bottom: 20px;
 } */
+
+@media screen and (max-width:600px) {
+    .header {margin-top: 55px;}
+
+    .main_content{
+        width: 90%;
+    }
+
+    .main_content > h3 {
+        text-align: center;
+        font-size: 5vw;
+    }
+
+    .alert-custom{
+    }
+
+    audio {width: 80%;}
+
+    .examples {float: left;}
+
+    .description {
+    }
+}
+
+
+@media screen and (min-width:601px) {
+    .header {margin-top: 50px;}
+
+    .alert-custom{
+      background-color: blue;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .header {margin-top: 110px;}
+
+    .alert-custom{
+      background-color: pink;
+    }
+}
+
+@media screen and (min-width:980px) {
+    .header {margin-top: 90px;}
+    .alert-custom{
+      background-color: green;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .header {margin-top: 90px;}
+    .content {display:none}
+    .alert-custom{
+      background-color: orange;
+    }
+
+    audio {width: 50%;}
+
+    .examples {
+        float: right;
+        width: 40%;
+    }
+
+    .description {
+            width: 50%;
+    }
+}

@@ -2,7 +2,7 @@
   height: 100%; width: 10%; overflow-x: hidden; padding-top: 120px;}
 
 .sidebar > p {padding-left: 10px; margin-bottom:0px; color: #2F4F4F;  font-size: 1.5vw;}
-.sidebar > ul {padding-left:30px; color: #2F4F4F; font-style: italic;  font-size: 1vw;}
+.sidebar > ul {padding-left: 30px; color: #2F4F4F; font-style: italic;  font-size: 1vw;}
 
 h4 {
     text-align: center;
