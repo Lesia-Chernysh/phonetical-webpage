@@ -60,9 +60,7 @@ body {
 @media (min-width:1200px) {
     .navbar {
         width: 100%;
-        font-size: 20px;
     }
     .navbar-brand{
-        font-size: 35px;
     }
 }

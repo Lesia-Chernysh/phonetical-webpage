@@ -3,14 +3,11 @@
 {% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/tables_css_.css' %}">{% endblock %}
 
 {% block content %}
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleSidebar">
-        <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse collapse-sidebar" id="collapsibleSidebar">
+<div class="sidebar">
   <p>Content:</p>
   <ul>
-    <li class="nav-item"><a href="#vowels">Vowels</a></li>
-    <li class="nav-item"><a href="#consonants">Consonants</a></li>
+    <li><a href="#vowels">Vowels</a></li>
+    <li><a href="#consonants">Consonants</a></li>
   </ul>
 </div>
 
@@ -36,7 +33,7 @@
 
   <p>In order to <strong>watch details about the pronunciation</strong> of each sound press it's symbol in the table.</p>
 </div>
-<div class="Vowels">
+<div class="table-responsive-sm">
 <table style="overflow-x:auto;">
   <tr>
     <th>&nbsp;</th>
@@ -70,18 +67,13 @@
 <div id="consonants">
 <h4>Consonants</h4>
 <div class="buttons">
-  <button type="button" style="border-radius: 4px; background: #2F4F4F; color: #FFE4E1;"
-          onclick="Hard()">Plain</button>
-  <button type="button" style="border-radius: 4px; background: #2F4F4F; color: #FFE4E1;"
-          onclick="Soft()">Palatalized</button>
-  <button type="button" style="border-radius: 4px; background: #2F4F4F; color: #FFE4E1;"
-          onclick="Voiced()">Voiced</button>
-  <button type="button" style="border-radius: 4px; background: #2F4F4F; color: #FFE4E1;"
-          onclick="Voiceless()">Voiceless</button>
-  <button type="button" style="border-radius: 4px; background: #2F4F4F; color: #FFE4E1;
-       " onclick="All()">All</button>
+  <button type="button" onclick="Hard()">Plain</button>
+  <button type="button" onclick="Soft()">Palatalized</button>
+  <button type="button" onclick="Voiced()">Voiced</button>
+  <button type="button" onclick="Voiceless()">Voiceless</button>
+  <button type="button" onclick="All()">All</button>
 </div>
-<div>
+<div class="table-responsive-sm">
 <table id="demo" style="overflow-x:auto;">
   <tr>
     <th rowspan="2">&nbsp;</th>

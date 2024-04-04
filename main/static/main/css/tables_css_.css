@@ -1,14 +1,15 @@
-.sidebar {background: #C0C0C0; position: fixed; z-index: 1; top: 0; left: 0;
-  height: 100%; width: 10%; overflow-x: hidden; padding-top: 10%; font-size: 14px;}
+.sidebar {background: #FFE4E1; position: fixed; z-index: 1; top: 0; left: 0;
+  height: 100%; width: 10%; overflow-x: hidden; padding-top: 120px;}
 
-.sidebar > p {padding-left: 10px; margin-bottom:0px; color: #2F4F4F;  font-size: 18px;}
-.sidebar > ul {padding-left:30px; color: #2F4F4F; font-style: italic;  font-size: 14px;}
+.sidebar > p {padding-left: 10px; margin-bottom:0px; color: #2F4F4F;  font-size: 1.5vw;}
+.sidebar > ul {padding-left:30px; color: #2F4F4F; font-style: italic;  font-size: 1vw;}
 
 h4 {
     text-align: center;
-    background: #FFE4E1;
     width: 100%;
-    padding-top: 10%;
+    margin-top: 80px;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 .alert-custom{
@@ -21,26 +22,27 @@ h4 {
 .buttons {margin-left:20%;}
 
 .buttons > button {
+    font-size: 16px;
     border-radius: 4px;
+    background: #2F4F4F;
+    color: #FFE4E1;
 }
 
 table{
     margin-left: auto;
     margin-right: auto;
-    border-collapse: collapse;
     width: 60%;
 }
 table, th, td {
   border:1px solid grey;
-  margin-top: 15px;
+  margin-top: 10px;
   padding-left: auto;
   padding-right: auto;
   height: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   text-align: center;
   font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
   font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px;
-  font-size: .85em;
   letter-spacing: .1em;
 }
 
@@ -51,31 +53,73 @@ table, a{
 a:hover, aside ul li:hover, aside h5 a:hover, aside h6 a:hover {
     color: #F08080;
     transform: scale(1.03);
+}
 
 figure, figcaption{
     margin: 5px;
-    font-size: 20px;
 }
 
 @media screen and (max-width:600px) {
-    .sidebar {
-        font-size: 8px;}
-    .buttons {margin-left:0;}
-    .buttons > button {font-size: 8px;}
-    table {
-        border: 0;
+    .sidebar {height: 20%; width: 15%; padding-top: 60px;}
+    .sidebar > p {padding-left: 1px; font-size: .7em;}
+    .sidebar > ul {padding-left:3px; font-size: .5em;}
+
+    h4 {font-size: .9em;}
+
+    .alert-custom{
+      margin-left: 15%;
+      margin-right: auto;
+      width: 85%;
+      font-size: .7em;
     }
-    table td {
-        border-bottom: 1px solid #ddd;
-        display: block;
+    .buttons {margin-left:10%;}
+    .buttons > button {
+        border-radius: 4px;
         font-size: .8em;
-        text-align: right;
+    }
+    table, th {
+      font-size: .7em;
+    }
+    table, td {
+      font-size: .9em;
+    }
+
+}
+
+@media screen and (min-width:601px) {
+    h4 {
+        margin-top: 120px;
+    }
+    .alert-custom{
+      margin-left: 10%;
+      margin-right: auto;
+      width: 90%;
+      background: blue;
+    }
+}
+
+@media screen and (min-width:782px) {
+    .alert-custom{
+      margin-left: 10%;
+      margin-right: auto;
+      width: 90%;
+      background: pink;
+    }
+
+}
+
+@media screen and (min-width:992px) {
+    .alert-custom{
+      margin-left: 15%;
+      margin-right: auto;
+      width: 80%;
+      background: green;
     }
 }
 
 @media screen and (min-width:1200px) {
-
-    table td {
-        font-size: 1em;
+    .alert-custom{
+        width: 75%;
+        background: orange;
     }
 }
