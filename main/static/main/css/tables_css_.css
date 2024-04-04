@@ -60,9 +60,9 @@ figure, figcaption{
 }
 
 @media screen and (max-width:600px) {
-    .sidebar {height: 20%; width: 15%; padding-top: 60px;}
-    .sidebar > p {padding-left: 1px; font-size: .7em;}
-    .sidebar > ul {padding-left:3px; font-size: .5em;}
+    .sidebar {height: 30%; width: 15%; padding-top: 60px;}
+    .sidebar > p {padding-left: 3px; font-size: .7em;}
+    .sidebar > ul {padding-left:5px; font-size: .5em;}
 
     h4 {font-size: .9em;}
 
@@ -71,8 +71,9 @@ figure, figcaption{
       margin-right: auto;
       width: 85%;
       font-size: .7em;
+      /*background: yellow; */
     }
-    .buttons {margin-left:10%;}
+    .buttons {margin-left:20%; margin-right:5%;}
     .buttons > button {
         border-radius: 4px;
         font-size: .8em;
@@ -87,6 +88,32 @@ figure, figcaption{
 }
 
 @media screen and (min-width:601px) {
+    .sidebar {height: 100%; width: 15%; padding-top: 70px;}
+    .sidebar > p {padding-left: 5px; font-size: .9em;}
+    .sidebar > ul {padding-left:15px; font-size: .7em;}
+
+    h4 {
+        margin-top: 70px;
+    }
+    .alert-custom{
+      margin-left: 15%;
+      margin-right: auto;
+      width: 85%;
+      /* background: blue; */
+    }
+
+    table, th {
+      font-size: .8em;
+    }
+    table, td {
+      font-size: 1em;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .sidebar {height: 100%; width: 10%; padding-top: 120px;}
+    .sidebar > p {padding-left: 5px; font-size: .9em;}
+    .sidebar > ul {padding-left:15px; font-size: .7em;}
     h4 {
         margin-top: 120px;
     }
@@ -94,32 +121,40 @@ figure, figcaption{
       margin-left: 10%;
       margin-right: auto;
       width: 90%;
-      background: blue;
+      /* background: pink; */
     }
-}
 
-@media screen and (min-width:782px) {
-    .alert-custom{
-      margin-left: 10%;
-      margin-right: auto;
-      width: 90%;
-      background: pink;
+    table, th {
+      font-size: 1em;
+    }
+    table, td {
+      font-size: 1em;
     }
 
 }
 
-@media screen and (min-width:992px) {
+@media screen and (min-width:980px) {
+    h4 {
+        margin-top: 90px;
+    }
     .alert-custom{
       margin-left: 15%;
       margin-right: auto;
       width: 80%;
-      background: green;
+      /*background: green; */
     }
 }
 
 @media screen and (min-width:1200px) {
+    .sidebar {width: 10%; padding-top: 120px;}
+    .sidebar > p {padding-left: 10px; font-size: 1.5vw;}
+    .sidebar > ul {padding-left: 30px; font-size: 1.2vw;}
     .alert-custom{
         width: 75%;
-        background: orange;
+        /* background: orange;*/
+    }
+
+    .buttons > button {
+        font-size: 16px;
     }
 }
