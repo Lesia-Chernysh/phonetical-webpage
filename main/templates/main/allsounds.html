@@ -7,7 +7,7 @@
 <div class="dropleft">
       <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {% translate "Мова:" %}
+        {% translate "Lang.:" %}
       </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             {% get_current_language as LANGUAGE_CODE %}
@@ -27,10 +27,10 @@
 
 {% block content %}
 <div class="sidebar">
-  <p>{% translate "Content:" %}</p>
+  <p>{% translate "Зміст:" %}</p>
   <ul>
-    <li><a href="#vowels">{% translate "Vowels" %}</a></li>
-    <li><a href="#consonants">{% translate "Consonants" %}</a></li>
+    <li><a href="#vowels">{% translate "Голосні" %}</a></li>
+    <li><a href="#consonants">{% translate "Приголосні" %}</a></li>
   </ul>
 </div>
 
@@ -38,29 +38,25 @@
 <h4>{% translate "Голосні" %}</h4>
 <div class="alert alert-custom  fade in alert-dismissable show mt-2">
   <p>{% blocktrans %}
-      There are 6 vowels in Ukrainian. You can see them in the table below, denoted with
-      IPA symbols (IPA - International Phonetic Alphabet).
-      <br> Vowel length is not contrastive, so there are no short or long vowels.
-      <br> Based on the tongue's position in respect to the <i><strong>horizontal axis </strong></i> they are
-      divided into <i><strong>front</strong></i>
-      and <i><strong>back vowels</strong></i>. In the table below one can see that sounds [i], [ɪ] and [ɛ]
-      are <i>front</i>, whereas [u], [ɔ] and [ɑ] are <i>back vowels</i>. It means that during pronunciation
-      of the first group of vowels the tongue's body lays forwards. And the second group of the vowels
-      is pronounced with the tongue's body in the back of the vowel space.
+      В українській мові всього 6 голосних (ви можете побачити їх в таблиці нижче, позначених за допомогою
+      фонетичних символів МФА - міжнародного фонетичного алфавіту). Голосні в українській мові бувають двох
+      рядів: переднього та заднього. Якщо голосний належить до переднього ряду, це означає, що під час  його
+      вимови тіло язика подається вперед. Якщо ж голосний належить до заднього ряду, то тіло язика під час
+      його вимови відтягнене назад, до стінки глотки.
     {% endblocktrans %} </p>
 
   <p>{% blocktrans %}
-      The position of the tongue with respect to the <i><strong>vertical axis</strong></i>,
-      namely it's <i>height</i> during pronunciation, distinguishes Ukrainian vowels as well. In the table
-      below one can see that there are <i><strong>low </strong></i> ([ɑ]), <i><strong>mid </strong></i> ([ɛ],
-      [ɔ]),<i><strong>high-mid </strong></i> ([ɪ]) and <i><strong>high </strong></i> ([i], [u]) vowels
-      in Ukrainian. It's also referred as close/open distinction between vowels, as the height of the tongue
-      directly affects the closeness of a vowel.
+      Також українські голосні розрізняють за ступенем підняття язика до твердого піднебіння під час
+      їх вимови. В деяких джерелах таку класифікацію здійснюють, залежно від ступеня закритості щелеп
+      під час вимови голосних. Тоді звуки поділяють на відкриті, середні та закриті. Ступінь підняття
+      язика напряму пов'язаний із відкритістю/закритістю звука, тому наведені класифікації є
+      взаємозамінними. В українській науковій літературі поширеною є класифікація за ступенем підняття язика,
+      тому саме з нею ви можете ознайомитися в розміщенній нижче таблиці.
     {% endblocktrans %}</p>
 
   <p>{% blocktrans %}
-      In order to <strong>watch details about the pronunciation</strong> of each sound press it's symbol
-      in the table.
+      Для того, аби переглянути інформацію про особливості вимови звука, який вас цікавить, натисніть
+      на нього курсором.
     {% endblocktrans %}</p>
 </div>
 
@@ -98,31 +94,31 @@
 <div id="consonants">
 <h4>{% translate "Приголосні" %}</h4>
 <div class="buttons">
-  <button type="button" onclick="Hard()">{% translate "Plain" %}</button>
-  <button type="button" onclick="Soft()">{% translate "Palatalized" %}</button>
-  <button type="button" onclick="Voiced()">{% translate "Voiced" %}</button>
-  <button type="button" onclick="Voiceless()">{% translate "Voiceless" %}</button>
-  <button type="button" onclick="All()">{% translate "All" %}</button>
+  <button type="button" onclick="Hard()">{% translate "Тверді" %}</button>
+  <button type="button" onclick="Soft()">{% translate "М'які" %}</button>
+  <button type="button" onclick="Voiced()">{% translate "Дзвінкі" %}</button>
+  <button type="button" onclick="Voiceless()">{% translate "Глухі" %}</button>
+  <button type="button" onclick="All()">{% translate "Всі" %}</button>
 </div>
 <div class="table-responsive-sm">
 <table id="demo" style="overflow-x:auto;">
   <tr>
     <th rowspan="2">&nbsp;</th>
     <th rowspan="2">&nbsp;</th>
-    <th colspan="2">{% translate "Labial" %}</th>
-    <th colspan="3">{% translate "Lingual" %}</th>
-    <th rowspan="2">{% translate "Glottal" %}</th>
+    <th colspan="2">{% translate "Губні" %}</th>
+    <th colspan="3">{% translate "Язикові" %}</th>
+    <th rowspan="2">{% translate "Глоткові" %}</th>
   </tr>
   <tr>
-    <th>{% translate "Bilabial" %}</th>
-    <th>{% translate "Labio-dental" %}</th>
-    <th>{% translate "Alveolar" %}</th>
-    <th>{% translate "Palatal" %}</th>
-    <th>{% translate "Velar" %}</th>
+    <th>{% translate "Губно-губні" %}</th>
+    <th>{% translate "Губно-зубні" %}</th>
+    <th>{% translate "Передньо-язикові" %}</th>
+    <th>{% translate "Середньо-язикові" %}</th>
+    <th>{% translate "Задньо-язикові" %}</th>
   </tr>
   <tr>
     <th rowspan="3">{% translate "Шумні" %}</th>
-    <th>{% translate "Plosive" %}</th>
+    <th>{% translate "Зімкненні" %}</th>
     <td><a id="hard1" href="/sound_b_p">b p</a></td>
     <td></td>
     <td><a id="hard2" href="/sound_d_t">d̪  t̪</a> <br>
@@ -133,7 +129,7 @@
     <td></td>
   </tr>
   <tr>
-    <th>{% translate "Fricativeі" %}v</th>
+    <th>{% translate "Щілинні" %}</th>
     <td></td>
     <td><a id="hard4" href="/sound_f">f</a></td>
     <td><a id="hard5" href="/sound_ʒ_ʃ">ʒ  ʃ</a> <br><!--superscript j-->
@@ -146,7 +142,7 @@
   </tr>
 
   <tr>
-    <th>{% translate "Affricates" %}</th>
+    <th>{% translate "Африкати" %}</th>
     <td></td>
     <td></td>
     <td><a id="hard9" href="/sound_dz_ts">dz  ts</a> <br>
@@ -159,8 +155,8 @@
   </tr>
 
   <tr>
-    <th rowspan="2">{% translate "Sonors" %}</th>
-    <th>{% translate "Nasal Stops" %}</th>
+    <th rowspan="2">{% translate "Сонорні" %}</th>
+    <th>{% translate "Зімкненні носові" %}</th>
     <td><a id="hard11" href="/sound_m">m</a></td>
     <td></td>
     <td><a id="hard12" href="/sound_n">n̪</a> <br>
@@ -171,7 +167,7 @@
   </tr>
 
   <tr>
-    <th>{% translate "Fricatives" %}</th>
+    <th>{% translate "Щілинні" %}</th>
     <td><a id="hard13" href="/sound_w">w</a></td>
     <td><a id="hard14" href="/sound_v">v</a></td>
     <td><a id="hard15" href="/sound_r">r</a> <br>
