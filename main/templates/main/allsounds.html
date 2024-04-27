@@ -1,62 +1,93 @@
 {% extends 'main/pattern.html' %}
+{% load i18n %}
 {% load static %}
 {% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/tables_css_.css' %}">{% endblock %}
 
+{% block lang_switch %}
+<div class="dropleft">
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {% translate "Мова:" %}
+      </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+
+            {% for lang in languages %}
+                <li>
+                    <a class="dropdown-item" href="/{{lang.code}}/allsounds">
+                        {{ lang.name_local }}
+                    </a>
+                </li>
+            {%endfor%}
+        </ul>
+    </div>
+{% endblock %}
+
 {% block content %}
 <div class="sidebar">
-  <p>Content:</p>
+  <p>{% translate "Content:" %}</p>
   <ul>
-    <li><a href="#vowels">Vowels</a></li>
-    <li><a href="#consonants">Consonants</a></li>
+    <li><a href="#vowels">{% translate "Vowels" %}</a></li>
+    <li><a href="#consonants">{% translate "Consonants" %}</a></li>
   </ul>
 </div>
 
 <div id="vowels">
-<h4>Vowels</h4>
+<h4>{% translate "Голосні" %}</h4>
 <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-  <p>There are 6 vowels in Ukrainian. You can see them in the table below, denoted with IPA symbols
-    (IPA - International Phonetic Alphabet).
-    <br> Vowel length is not contrastive, so there are no short or long vowels.
-    <br> Based on the tongue's position in respect to
-    the <i><strong>horizontal axis </strong></i> they are divided into <i><strong>front</strong></i>
-    and <i><strong>back vowels</strong></i>. In the table below one can see that sounds [i], [ɪ] and [ɛ]
-    are <i>front</i>, whereas [u], [ɔ] and [ɑ] are <i>back vowels</i>. It means that during pronunciation
-    of the first group of vowels the tongue's body lays forwards. And the second group of the vowels
-  is pronounced with the tongue's body in the back of the vowel space.</p>
+  <p>{% blocktrans %}
+      There are 6 vowels in Ukrainian. You can see them in the table below, denoted with
+      IPA symbols (IPA - International Phonetic Alphabet).
+      <br> Vowel length is not contrastive, so there are no short or long vowels.
+      <br> Based on the tongue's position in respect to the <i><strong>horizontal axis </strong></i> they are
+      divided into <i><strong>front</strong></i>
+      and <i><strong>back vowels</strong></i>. In the table below one can see that sounds [i], [ɪ] and [ɛ]
+      are <i>front</i>, whereas [u], [ɔ] and [ɑ] are <i>back vowels</i>. It means that during pronunciation
+      of the first group of vowels the tongue's body lays forwards. And the second group of the vowels
+      is pronounced with the tongue's body in the back of the vowel space.
+    {% endblocktrans %} </p>
 
-  <p>The position of the tongue with respect to the <i><strong>vertical axis</strong></i>, namely
-    it's <i>height</i> during pronunciation, distinguishes Ukrainian vowels as well. In the table
-  below one can see that there are <i><strong>low </strong></i> ([ɑ]), <i><strong>mid </strong></i> ([ɛ], [ɔ]),
-    <i><strong>high-mid </strong></i> ([ɪ]) and <i><strong>high </strong></i> ([i], [u]) vowels in Ukrainian.
-  It's also referred as close/open distinction between vowels, as the height of the tongue directly
-  affects the closeness of a vowel.</p>
+  <p>{% blocktrans %}
+      The position of the tongue with respect to the <i><strong>vertical axis</strong></i>,
+      namely it's <i>height</i> during pronunciation, distinguishes Ukrainian vowels as well. In the table
+      below one can see that there are <i><strong>low </strong></i> ([ɑ]), <i><strong>mid </strong></i> ([ɛ],
+      [ɔ]),<i><strong>high-mid </strong></i> ([ɪ]) and <i><strong>high </strong></i> ([i], [u]) vowels
+      in Ukrainian. It's also referred as close/open distinction between vowels, as the height of the tongue
+      directly affects the closeness of a vowel.
+    {% endblocktrans %}</p>
 
-  <p>In order to <strong>watch details about the pronunciation</strong> of each sound press it's symbol in the table.</p>
+  <p>{% blocktrans %}
+      In order to <strong>watch details about the pronunciation</strong> of each sound press it's symbol
+      in the table.
+    {% endblocktrans %}</p>
 </div>
+
 <div class="table-responsive-sm">
 <table style="overflow-x:auto;">
   <tr>
     <th>&nbsp;</th>
-    <th>Front</th>
-    <th>Back</th>
+    <th>{% translate "Передній ряд" %}</th>
+    <th>{% translate "Задній ряд" %}</th>
   </tr>
   <tr>
-    <th>High</th>
+    <th>{% translate "Високе підняття" %}</th>
     <td><a href="/sound_i">і</a></td>
     <td><a href="/sound_u">u</a></td>
   </tr>
   <tr>
-    <th>High-mid</th>
+    <th>{% translate "Високо-середнє підняття" %}</th>
     <td><a href="/sound_ɪ">ɪ</a></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <th>Mid</th>
+    <th>{% translate "Середнє підняття" %}</th>
     <td><a href="/sound_ɛ">ɛ</a></td>
     <td><a href="/sound_ɔ">ɔ</a></td>
   </tr>
   <tr>
-    <th>Low</th>
+    <th>{% translate "Низьке підняття" %}</th>
     <td>&nbsp;</td>
     <td><a href="/sound_ɑ">ɑ</a></td>
   </tr>
@@ -65,33 +96,33 @@
 </div>
 
 <div id="consonants">
-<h4>Consonants</h4>
+<h4>{% translate "Приголосні" %}</h4>
 <div class="buttons">
-  <button type="button" onclick="Hard()">Plain</button>
-  <button type="button" onclick="Soft()">Palatalized</button>
-  <button type="button" onclick="Voiced()">Voiced</button>
-  <button type="button" onclick="Voiceless()">Voiceless</button>
-  <button type="button" onclick="All()">All</button>
+  <button type="button" onclick="Hard()">{% translate "Plain" %}</button>
+  <button type="button" onclick="Soft()">{% translate "Palatalized" %}</button>
+  <button type="button" onclick="Voiced()">{% translate "Voiced" %}</button>
+  <button type="button" onclick="Voiceless()">{% translate "Voiceless" %}</button>
+  <button type="button" onclick="All()">{% translate "All" %}</button>
 </div>
 <div class="table-responsive-sm">
 <table id="demo" style="overflow-x:auto;">
   <tr>
     <th rowspan="2">&nbsp;</th>
     <th rowspan="2">&nbsp;</th>
-    <th colspan="2">Labial</th>
-    <th colspan="3">Язикові</th>
-    <th rowspan="2">Glottal</th>
+    <th colspan="2">{% translate "Labial" %}</th>
+    <th colspan="3">{% translate "Lingual" %}</th>
+    <th rowspan="2">{% translate "Glottal" %}</th>
   </tr>
   <tr>
-    <th>Bilabial</th>
-    <th>Labio-dental</th>
-    <th>Dental/ Alveolar</th>
-    <th>Palatal</th>
-    <th>Velar</th>
+    <th>{% translate "Bilabial" %}</th>
+    <th>{% translate "Labio-dental" %}</th>
+    <th>{% translate "Alveolar" %}</th>
+    <th>{% translate "Palatal" %}</th>
+    <th>{% translate "Velar" %}</th>
   </tr>
   <tr>
-    <th rowspan="3">Шумні</th>
-    <th>Plosive</th>
+    <th rowspan="3">{% translate "Шумні" %}</th>
+    <th>{% translate "Plosive" %}</th>
     <td><a id="hard1" href="/sound_b_p">b p</a></td>
     <td></td>
     <td><a id="hard2" href="/sound_d_t">d̪  t̪</a> <br>
@@ -102,7 +133,7 @@
     <td></td>
   </tr>
   <tr>
-    <th>Fricatives</th>
+    <th>{% translate "Fricativeі" %}v</th>
     <td></td>
     <td><a id="hard4" href="/sound_f">f</a></td>
     <td><a id="hard5" href="/sound_ʒ_ʃ">ʒ  ʃ</a> <br><!--superscript j-->
@@ -115,7 +146,7 @@
   </tr>
 
   <tr>
-    <th>Affricates</th>
+    <th>{% translate "Affricates" %}</th>
     <td></td>
     <td></td>
     <td><a id="hard9" href="/sound_dz_ts">dz  ts</a> <br>
@@ -128,8 +159,8 @@
   </tr>
 
   <tr>
-    <th rowspan="2">Sonors</th>
-    <th>Nasal Stops</th>
+    <th rowspan="2">{% translate "Sonors" %}</th>
+    <th>{% translate "Nasal Stops" %}</th>
     <td><a id="hard11" href="/sound_m">m</a></td>
     <td></td>
     <td><a id="hard12" href="/sound_n">n̪</a> <br>
@@ -140,7 +171,7 @@
   </tr>
 
   <tr>
-    <th>Fricatives</th>
+    <th>{% translate "Fricatives" %}</th>
     <td><a id="hard13" href="/sound_w">w</a></td>
     <td><a id="hard14" href="/sound_v">v</a></td>
     <td><a id="hard15" href="/sound_r">r</a> <br>

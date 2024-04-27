@@ -1,11 +1,25 @@
 from django.shortcuts import render
+from django.utils.translation import gettext as _
+from django.utils.translation import get_language, activate, gettext
+
 from .models import InformationAboutVowels
 from .models import InformationAboutConsonants
 
 
 # Create your views here.
 def home(request):
-    return render(request, 'main/home_page.html')
+    trans = translate(language='en')
+    return render(request, 'main/home_page.html', {'trans': trans})
+
+
+def translate(language):
+    current_lang = get_language()
+    try:
+        activate(language)
+        text = gettext('привіт')
+    finally:
+        activate(current_lang)
+    return text
 
 
 def allsounds(request):
@@ -17,7 +31,7 @@ def glossary(request):
 
 
 def pictures(request):
-    information =  InformationAboutVowels.objects.filter(row__contains='передній').order_by('id')
+    information = InformationAboutVowels.objects.filter(row__contains='передній').order_by('id')
     information2 = InformationAboutVowels.objects.filter(row__contains='задній').order_by('id')
     information_p = InformationAboutConsonants.objects.filter(sound__contains='p')
     information_f = InformationAboutConsonants.objects.filter(sound__contains='f')

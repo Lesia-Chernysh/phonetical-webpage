@@ -1,18 +1,41 @@
 {% extends 'main/pattern_for_vowels.html' %}
+{% load i18n %}
 {% load static %}
+
+{% block lang_switch %}
+<div class="dropleft">
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {% translate "Мова:" %}
+      </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+
+            {% for lang in languages %}
+                <li>
+                    <a class="dropdown-item" href="/{{lang.code}}/sound_i">
+                        {{ lang.name_local }}
+                    </a>
+                </li>
+            {%endfor%}
+        </ul>
+    </div>
+{% endblock %}
 
 {% block sound %}[i]{% endblock %}
 {% block phoneme %}/i/{% endblock %}
 {% block letter %}i, ї{% endblock %}
-{% block examples %}<i>In other languages:</i>
-English (American): [i] in <i>b<b>ea</b>t</i>;
-German: [i] in <i>L<b>ie</b>be</i>, <i>M<b>ie</b>te</i>;
+{% block examples %}<i>{% translate "In other languages:" %}</i>
+{% translate "English (American):" %} [i] {% translate "in" %} <i>b<b>ea</b>t</i>;
+{% translate "German:" %} [i] {% translate "in" %} <i>L<b>ie</b>be</i>, <i>M<b>ie</b>te</i>;
 
-<i>Pertinent letter/s</i>
-<b>1) i: </b> In this case the i-sound always palatalise the consonant it follows.
-For example:
+<i>{% translate "Pertinent letter/s" %}</i>
+<b>1) i: </b> {% translate "In this case the i-sound always palatalise the consonant it follows." %}
+{% translate "For example" %}:
 - л<b>і</b>с /lʲ<b>i</b>s/ (noun, m., sing.) - forest
 - р<b>і</b>к /rʲ<b>i</b>k/ (noun, m., sing.) - year
-<b>2) ї: </b> it always stands for two sounds: [ji].
-For example:<b>ї</b>жа /'j<b>i</b>ʒɑ/ (noun, f., uncountable) - food
+<b>2) ї: </b> {% translate "it always stands for two sounds" %}: [ji].
+{% translate "For example" %}: <b>ї</b>жа /'j<b>i</b>ʒɑ/ (noun, f., uncountable) - food
 {% endblock %}

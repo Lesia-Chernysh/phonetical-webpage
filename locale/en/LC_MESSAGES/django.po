@@ -1,0 +1,374 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-27 15:55+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\interface\settings.py:130
+msgid "English"
+msgstr ""
+
+#: .\interface\settings.py:131
+msgid "Ukrainian"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:10
+#: .\main\templates\main\home_page.html:11 .\main\templates\main\sound_a.html:9
+#: .\main\templates\main\sound_e.html:9 .\main\templates\main\sound_i.html:9
+#: .\main\templates\main\sound_o.html:9
+msgid "Мова:"
+msgstr "Language:"
+
+#: .\main\templates\main\allsounds.html:30
+msgid "Content:"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:32
+msgid "Vowels"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:33
+msgid "Consonants"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:38
+msgid "Голосні"
+msgstr " Vowels"
+
+#: .\main\templates\main\allsounds.html:40
+msgid ""
+"\n"
+"      There are 6 vowels in Ukrainian. You can see them in the table below, "
+"denoted with\n"
+"      IPA symbols (IPA - International Phonetic Alphabet).\n"
+"      <br> Vowel length is not contrastive, so there are no short or long "
+"vowels.\n"
+"      <br> Based on the tongue's position in respect to the "
+"<i><strong>horizontal axis </strong></i> they are\n"
+"      divided into <i><strong>front</strong></i>\n"
+"      and <i><strong>back vowels</strong></i>. In the table below one can "
+"see that sounds [i], [ɪ] and [ɛ]\n"
+"      are <i>front</i>, whereas [u], [ɔ] and [ɑ] are <i>back vowels</i>. It "
+"means that during pronunciation\n"
+"      of the first group of vowels the tongue's body lays forwards. And the "
+"second group of the vowels\n"
+"      is pronounced with the tongue's body in the back of the vowel space.\n"
+"    "
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:52
+msgid ""
+"\n"
+"      The position of the tongue with respect to the <i><strong>vertical "
+"axis</strong></i>,\n"
+"      namely it's <i>height</i> during pronunciation, distinguishes "
+"Ukrainian vowels as well. In the table\n"
+"      below one can see that there are <i><strong>low </strong></i> ([ɑ]), "
+"<i><strong>mid </strong></i> ([ɛ],\n"
+"      [ɔ]),<i><strong>high-mid </strong></i> ([ɪ]) and <i><strong>high </"
+"strong></i> ([i], [u]) vowels\n"
+"      in Ukrainian. It's also referred as close/open distinction between "
+"vowels, as the height of the tongue\n"
+"      directly affects the closeness of a vowel.\n"
+"    "
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:61
+msgid ""
+"\n"
+"      In order to <strong>watch details about the pronunciation</strong> of "
+"each sound press it's symbol\n"
+"      in the table.\n"
+"    "
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:71
+msgid "Передній ряд"
+msgstr "Front"
+
+#: .\main\templates\main\allsounds.html:72
+msgid "Задній ряд"
+msgstr "Back"
+
+#: .\main\templates\main\allsounds.html:75
+msgid "Високе підняття"
+msgstr "High"
+
+#: .\main\templates\main\allsounds.html:80
+msgid "Високо-середнє підняття"
+msgstr "High-mid"
+
+#: .\main\templates\main\allsounds.html:85
+msgid "Середнє підняття"
+msgstr "Mid"
+
+#: .\main\templates\main\allsounds.html:90
+msgid "Низьке підняття"
+msgstr "Low"
+
+#: .\main\templates\main\allsounds.html:99
+msgid "Приголосні"
+msgstr "Consonants"
+
+#: .\main\templates\main\allsounds.html:101
+msgid "Plain"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:102
+msgid "Palatalized"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:103
+msgid "Voiced"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:104
+msgid "Voiceless"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:105
+msgid "All"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:112
+msgid "Labial"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:113
+msgid "Lingual"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:114
+msgid "Glottal"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:117
+msgid "Bilabial"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:118
+msgid "Labio-dental"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:119
+msgid "Alveolar"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:120
+msgid "Palatal"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:121
+msgid "Velar"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:124
+msgid "Шумні"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:125
+msgid "Plosive"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:136
+msgid "Fricativeі"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:149
+msgid "Affricates"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:162
+msgid "Sonors"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:163
+msgid "Nasal Stops"
+msgstr ""
+
+#: .\main\templates\main\allsounds.html:174
+msgid "Fricatives"
+msgstr ""
+
+#: .\main\templates\main\home_page.html:31
+msgid "Ласкаво просимо на фонетичний сайт!"
+msgstr "Welcome to our phonetical webpage!"
+
+#: .\main\templates\main\home_page.html:35
+msgid ""
+"\n"
+"                Якщо ви вивчаєте українську та <strong>бажаєте мати "
+"бездоганну вимову</strong>,\n"
+"                ця вебсторінка саме для вас!\n"
+"            "
+msgstr ""
+
+#: .\main\templates\main\home_page.html:39
+msgid ""
+"\n"
+"                Якщо ви <strong>цікавитеся українською фонетикою</strong> з "
+"якихось інших причин -\n"
+"                вона також для вас!\n"
+"            "
+msgstr ""
+
+#: .\main\templates\main\home_page.html:43
+msgid ""
+"\n"
+"                Тут ви можете ознайомитися із <a href=\"allsounds\"> "
+"<u>системою українських\n"
+"                звуків</u> </a>,<a href=\"pictures\"> <u> особливостями їх "
+"вимови</u> </a> та\n"
+"                <a href=\"pronunciation_checker\"><u>потренувати власну "
+"вимову</u> </a>.\n"
+"            "
+msgstr ""
+
+#: .\main\templates\main\pattern.html:9
+#, fuzzy
+#| msgid "Ласкаво просимо на фонетичний сайт!"
+msgid "Український фонетичний сайт"
+msgstr "Welcome to our phonetical webpage!"
+
+#: .\main\templates\main\pattern.html:21
+msgid "Українські звуки"
+msgstr "Sounds of Ukrainian"
+
+#: .\main\templates\main\pattern.html:28
+msgid "Домашня сторінка"
+msgstr "Home"
+
+#: .\main\templates\main\pattern.html:31
+msgid "Система фонем"
+msgstr "Phonems' System"
+
+#: .\main\templates\main\pattern.html:34
+msgid "Схожі звуки"
+msgstr "Similar Sounds"
+
+#: .\main\templates\main\pattern.html:37
+msgid "Тренування вимови"
+msgstr "Pronunciation Training"
+
+#: .\main\templates\main\pattern.html:40
+msgid "Словник"
+msgstr "Glossary"
+
+#: .\main\templates\main\pattern_for_vowels.html:11
+msgid "Phoneme"
+msgstr ""
+
+#: .\main\templates\main\pattern_for_vowels.html:12
+msgid "Letters:"
+msgstr ""
+
+#: .\main\templates\main\pattern_for_vowels.html:25
+msgid "Articulation of the sound"
+msgstr ""
+
+#: .\main\templates\main\pattern_for_vowels.html:27
+msgid "Play the audio:"
+msgstr ""
+
+#: .\main\templates\main\pattern_for_vowels.html:34
+msgid "Description:"
+msgstr ""
+
+#: .\main\templates\main\sound_a.html:30 .\main\templates\main\sound_e.html:30
+#: .\main\templates\main\sound_i.html:30 .\main\templates\main\sound_o.html:30
+#: .\main\templates\main\sound_u.html:8
+msgid "In other languages:"
+msgstr ""
+
+#: .\main\templates\main\sound_a.html:31
+msgid "English (British):"
+msgstr ""
+
+#: .\main\templates\main\sound_a.html:31
+msgid "similar to the sound"
+msgstr ""
+
+#: .\main\templates\main\sound_a.html:31 .\main\templates\main\sound_a.html:32
+#: .\main\templates\main\sound_e.html:31 .\main\templates\main\sound_e.html:32
+#: .\main\templates\main\sound_i.html:31 .\main\templates\main\sound_i.html:32
+#: .\main\templates\main\sound_o.html:31 .\main\templates\main\sound_o.html:32
+#: .\main\templates\main\sound_u.html:9 .\main\templates\main\sound_u.html:10
+msgid "in"
+msgstr ""
+
+#: .\main\templates\main\sound_a.html:31
+msgid "but shorter"
+msgstr ""
+
+#: .\main\templates\main\sound_a.html:32 .\main\templates\main\sound_e.html:32
+#: .\main\templates\main\sound_i.html:32 .\main\templates\main\sound_o.html:32
+#: .\main\templates\main\sound_u.html:10
+msgid "German:"
+msgstr ""
+
+#: .\main\templates\main\sound_a.html:34 .\main\templates\main\sound_e.html:34
+#: .\main\templates\main\sound_i.html:34 .\main\templates\main\sound_o.html:34
+#: .\main\templates\main\sound_u.html:12
+msgid "Pertinent letter/s"
+msgstr ""
+
+#: .\main\templates\main\sound_a.html:37
+msgid ""
+"<i>after a consonant</i> stands for ɑ-sound, making the consonant "
+"palatalised."
+msgstr ""
+
+#: .\main\templates\main\sound_a.html:38 .\main\templates\main\sound_a.html:40
+#: .\main\templates\main\sound_e.html:36 .\main\templates\main\sound_e.html:38
+#: .\main\templates\main\sound_i.html:36 .\main\templates\main\sound_i.html:40
+#: .\main\templates\main\sound_o.html:35 .\main\templates\main\sound_u.html:16
+#: .\main\templates\main\sound_u.html:18
+msgid "For example"
+msgstr ""
+
+#: .\main\templates\main\sound_a.html:39 .\main\templates\main\sound_u.html:17
+msgid ""
+"<i>after a vowel</i> and <i>at the beginning of a syllable</i> stands for "
+"two sounds"
+msgstr ""
+
+#: .\main\templates\main\sound_e.html:31 .\main\templates\main\sound_i.html:31
+#: .\main\templates\main\sound_o.html:31 .\main\templates\main\sound_u.html:9
+msgid "English (American):"
+msgstr ""
+
+#: .\main\templates\main\sound_e.html:37
+msgid "stands for two sounds"
+msgstr ""
+
+#: .\main\templates\main\sound_i.html:35
+msgid "In this case the i-sound always palatalise the consonant it follows."
+msgstr ""
+
+#: .\main\templates\main\sound_i.html:39
+msgid "it always stands for two sounds"
+msgstr ""
+
+#: .\main\templates\main\sound_u.html:15
+msgid ""
+"<i>after a consonant</i> stands for u-sound, making the consonant "
+"palatalised."
+msgstr ""
+
+#: .\main\views.py:19
+msgid "привіт"
+msgstr "hello"

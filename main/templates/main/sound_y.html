@@ -1,11 +1,34 @@
 {% extends 'main/pattern_for_vowels.html' %}
+{% load i18n %}
 {% load static %}
+
+{% block lang_switch %}
+<div class="dropleft">
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {% translate "Мова:" %}
+      </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+
+            {% for lang in languages %}
+                <li>
+                    <a class="dropdown-item" href="/{{lang.code}}/sound_ɪ">
+                        {{ lang.name_local }}
+                    </a>
+                </li>
+            {%endfor%}
+        </ul>
+    </div>
+{% endblock %}
 
 {% block sound %}[ɪ]{% endblock %}
 {% block phoneme %}/ɪ/{% endblock %}
 {% block letter %}и{% endblock %}
-{% block examples %}<i>In other languages:</i>
+{% block examples %}<i>{% translate "In other languages:" %}</i>
 
-For example:
+{% translate "For example" %}:
 с<b>и</b>р /s<b>ɪ</b>r/ (noun, m., sing.) - cheese
 {% endblock %}

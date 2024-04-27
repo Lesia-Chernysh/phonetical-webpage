@@ -1,12 +1,37 @@
 {% extends 'main/pattern_for_vowels.html' %}
+{% load i18n %}
 {% load static %}
+
+{% block lang_switch %}
+<div class="dropleft">
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {% translate "Мова:" %}
+      </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+
+            {% for lang in languages %}
+                <li>
+                    <a class="dropdown-item" href="/{{lang.code}}/sound_ɔ">
+                        {{ lang.name_local }}
+                    </a>
+                </li>
+            {%endfor%}
+        </ul>
+    </div>
+{% endblock %}
 
 {% block sound %}[ɔ]{% endblock %}
 {% block phoneme %}/ɔ/{% endblock %}
 {% block letter %}о{% endblock %}
-{% block examples %}<i>In other languages:</i>
-English (American): [ɔ] in <i>b<b>ou</b>ght</i>;
-German: [ɔ] in <i>G<b>o</b>tt</i>, <i><b>o</b>ffen</i>;
-<b>For example:</b>
+{% block examples %}<i>{% translate "In other languages:" %}</i>
+{% translate "English (American):" %} [ɔ] {% translate "in" %} <i>b<b>ou</b>ght</i>;
+{% translate "German:" %} [ɔ] {% translate "in" %} <i>G<b>o</b>tt</i>, <i><b>o</b>ffen</i>;
+
+<i>{% translate "Pertinent letter/s" %}:</i> o
+<b>{% translate "For example" %}:</b>
 с<b>о</b>н /s<b>ɔ</b>n/ (noun, m., sing.) - 1) a dream; 2) sleeping
 {% endblock %}

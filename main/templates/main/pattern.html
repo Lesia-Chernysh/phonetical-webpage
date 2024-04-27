@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <!doctype html>
 <html lang="uk">
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Український фонетичний сайт</title>
+    <title>{% translate "Український фонетичний сайт" %}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -17,37 +18,36 @@
 <body>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-    <a class="navbar-brand navbar-brand-center " href="#">Ukrainian sounds</a>
+    <a class="navbar-brand navbar-brand-center " href="#">{% translate "Українські звуки" %}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav ms-auto mb-2 mb-md-0"> <!--.mx-auto - align to center, .ms-auto - align to right, .me-auto - align to left-->
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/">Home</a>
+          <a class="nav-link" aria-current="page" href="/">{% translate "Домашня сторінка" %} </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/allsounds">Phonemes' System</a>
+          <a class="nav-link" aria-current="page" href="/allsounds">{% translate "Система фонем" %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/pictures">Similar Sounds</a>
+          <a class="nav-link" href="/pictures">{% translate "Схожі звуки" %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/pronunciation_checker">Pronunciation Training</a>
+          <a class="nav-link" href="/pronunciation_checker">{% translate "Тренування вимови" %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/glossary">Glossary</a>
+          <a class="nav-link" href="/glossary">{% translate "Словник" %}</a>
         </li>
       </ul>
     </div>
-    <!--<select id="lang-switch" style="padding-right: 1%;">
-        <option value="ua">Ukrainian</option>
-        <option value="en">English</option>
-    </select> -->
+
+    {% block lang_switch %}{% endblock %}
+
+
     </div>
 </nav>
 
 {% block content %}{% endblock %}
-
 </body>
 </html>

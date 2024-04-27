@@ -1,16 +1,39 @@
 {% extends 'main/pattern_for_vowels.html' %}
+{% load i18n %}
 {% load static %}
+
+{% block lang_switch %}
+<div class="dropleft">
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {% translate "Мова:" %}
+      </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+
+            {% for lang in languages %}
+                <li>
+                    <a class="dropdown-item" href="/{{lang.code}}/sound_ɛ">
+                        {{ lang.name_local }}
+                    </a>
+                </li>
+            {%endfor%}
+        </ul>
+    </div>
+{% endblock %}
 
 {% block sound %}[ɛ]{% endblock %}
 {% block phoneme %}/ɛ/{% endblock %}
 {% block letter %}е, є{% endblock %}
-{% block examples %}<i>In other languages:</i>
-English (American): [ɛ] in <i>b<b>e</b>d</i>;
-German: [ɛ] in <i>B<b>e</b>tt</i>, <i>G<b>e</b>ld</i>;
+{% block examples %}<i>{% translate "In other languages:" %}</i>
+{% translate "English (American):" %} [ɛ] {% translate "in" %} <i>b<b>e</b>d</i>;
+{% translate "German:" %} [ɛ] {% translate "in" %} <i>B<b>e</b>tt</i>, <i>G<b>e</b>ld</i>;
 
-<i>Pertinent letter/s</i>
+<i>{% translate "Pertinent letter/s" %}</i>
 <b>1) e: </b>
-For example:<b>е</b>л<b>е</b>м<b>е</b>нт /<b>ɛ</b>l<b>ɛ</b>'m<b>ɛ</b>nt/ (noun, m., sing,) - element<br>
-<b>є: </b>stands for two sounds: [jɛ].
-For example:<b>є</b>днати /j<b>ɛ</b>d̪'n̪ɑt̪ɪ/ - to unite;
+{% translate "For example" %}: <b>е</b>л<b>е</b>м<b>е</b>нт /<b>ɛ</b>l<b>ɛ</b>'m<b>ɛ</b>nt/ (noun, m., sing,) - element<br>
+<b>є: </b>{% translate "stands for two sounds" %}: [jɛ].
+{% translate "For example" %}: <b>є</b>днати /j<b>ɛ</b>d̪'n̪ɑt̪ɪ/ - to unite;
 {% endblock %}

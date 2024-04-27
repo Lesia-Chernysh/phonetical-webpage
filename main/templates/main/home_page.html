@@ -1,20 +1,50 @@
 {% extends 'main/pattern.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/home_css.css' %}">{% endblock %}
+
+{% block lang_switch %}
+<div class="dropleft">
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {% translate "Мова:" %}
+      </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+
+            {% for lang in languages %}
+                <li>
+                    <a class="dropdown-item" href="/{{lang.code}}/">
+                        {{ lang.name_local }}
+                    </a>
+                </li>
+            {%endfor%}
+        </ul>
+    </div>
+{% endblock %}
+
 {% block content %}
 <main>
-    <h2>Ласкаво просимо на фонетичний сайт!</h2>
+    <h2>{% translate "Ласкаво просимо на фонетичний сайт!" %}</h2>
     <div>
     <div class="alert alert-custom  fade in alert-dismissable show mt-2" style="font-size: 16px;
     text-indent: 3ch; color: #2F4F4F;">
-        <p>Якщо ви вивчаєте українську та <strong>бажаєте мати бездоганну вимову</strong>,
-            ця вебсторінка саме для вас!</p>
-        <p>Якщо ви <strong>цікавитеся українською фонетикою</strong> з якихось інших причин - вона
-            також для вас!</p>
-        <p>Тут ви можете ознайомитися із <a href="allsounds"><u>системою українських звуків</u></a>,
-            <a href="pictures"><u>особливостями їх вимови</u></a> та <a href="pronunciation_checker"><u>
-                потренувати власну вимову</u></a>.</p>
+        <p>{% blocktrans %}
+                Якщо ви вивчаєте українську та <strong>бажаєте мати бездоганну вимову</strong>,
+                ця вебсторінка саме для вас!
+            {% endblocktrans %}</p>
+        <p>{% blocktrans %}
+                Якщо ви <strong>цікавитеся українською фонетикою</strong> з якихось інших причин -
+                вона також для вас!
+            {% endblocktrans %}</p>
+        <p>{% blocktrans %}
+                Тут ви можете ознайомитися із <a href="allsounds"> <u>системою українських
+                звуків</u> </a>,<a href="pictures"> <u> особливостями їх вимови</u> </a> та
+                <a href="pronunciation_checker"><u>потренувати власну вимову</u> </a>.
+            {% endblocktrans %}</p>
     </div>
     </div>
 </main>

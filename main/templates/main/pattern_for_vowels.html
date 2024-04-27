@@ -1,34 +1,37 @@
 {% extends 'main/pattern.html' %}
+{% load i18n %}
 {% load static %}
 
-{% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/vowels_pattern_css.css' %}">{% endblock %}
+{% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/pattern_separate_sounds.css' %}">{% endblock %}
+
 {% block content %}
 <main>
     <div class="header">
         <h2>{% block sound %}{% endblock %}</h2>
-        <h3>Phoneme {% block phoneme %}{% endblock %}. Letters: {% block letter %}{% endblock %}</h3>
+        <h3>{% translate "Phoneme" %} {% block phoneme %}{% endblock %}.
+            {% translate "Letters:" %} {% block letter %}{% endblock %}</h3>
     </div>
 
     <div class="main_content">
-        <div class="content">
+        <!--<div class="content">
             <h5>Content</h5>
             <ul>
                 <li><a href="#examples">In other languages</a></li>
                 <li><a href="#examples">Pertinent letter/s</a></li>
                 <li><a href="#description">Description of articulation</a></li>
             </ul>
-        </div>
+        </div> -->
         {% for el in information%}
-        <h3>Articulation of the sound {{el.sound}}</h3>
+        <h3>{% translate "Articulation of the sound" %} {{el.sound}}</h3>
             <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <figure><figcaption>Play the audio:</figcaption>
+                <figure><figcaption>{% translate "Play the audio:" %}</figcaption>
                     <audio controls src={{el.audio.url}}>
                     Your browser does not support the <code>audio</code> element.
                     </audio>
                 </figure>
                 <img src={{el.image.url}} alt="Звук">
-                <p class="examples" id="examples">{% block examples %}{% endblock %}</p>
-                <p><i>Description:</i></p>
+                <p class="examples" id="examples">{% block examples %}{% endblock %}<br></p>
+                <p><i>{% translate "Description:" %}</i></p>
                 <p class = "description" id="description">{{el.description}}</p>
             </div>
 

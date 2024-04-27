@@ -27,12 +27,49 @@
         </ul>
     </div>
 
-    <div class="main_content">
+    <div class="vowels">
         <h3>Vowels</h3>
         <h4 id = '[ɪ] vs [i]'>[ɪ] vs [i]</h4>
-        <div class="vowels">
+        <div class="front_row">
         {% for el in information%}
             {% if el.sound == '[і]' or el.sound == '[ɪ]' %}
+              <!--<div class="image-container">
+                <img src={{el.image.url}} class="visible">
+              </div>
+
+              <button onclick="previousImage()">Previous</button>
+              <button onclick="nextImage()">Next</button>
+
+              <script>
+                let index = 0;
+                const images = document.querySelectorAll('.image-container img');
+
+                function showImage(index) {
+                  images.forEach((img, i) => {
+                    if (i === index) {
+                      img.classList.add('visible');
+                    } else {
+                      img.classList.remove('visible');
+                    }
+                  });
+                }
+
+                function nextImage() {
+                  index++;
+                  if (index >= images.length) {
+                    index = 0;
+                  }
+                  showImage(index);
+                }
+
+                function previousImage() {
+                  index--;
+                  if (index < 0) {
+                    index = images.length - 1;
+                  }
+                  showImage(index);
+                }
+              </script> -->
                 <div class="alert alert-custom  fade in alert-dismissable show mt-2">
                     <h5>Articulation of {{el.sound}}</h5>
                     <img src={{el.image.url}} alt="Звук">
@@ -46,9 +83,14 @@
         {%endfor%}
         </div>
         <div class="explanation">
-            {% block explanation_i_y %} {%endblock%}
+            <p>It might be important to differentiate these two vowels, as in some cases they are the only sounds making a difference between two words. For example: <i>дим-дім</i> [d̪ɪm]-[d̪im] (smoke-house), <i>лис-ліс</i> [lɪs]-[lʲis] (fox-forest),<i>злива-зліва</i> ['zlɪva]-['zlʲiva] (heavy rain - on the left) ect.
+                Both sounds belong to front vowels, and for a non-native speaker they might sound very similar. However, there are differences in articulation: during the pronunciation of [ɪ] the tongue is placed lower compared to [i].
+                Try yourself, using the pictures and the audios.
+            </p>
         </div>
+    </div>
 
+    <div class="consonants">
         <h3>Plain vs palatalized</h3>
         <h4 id="[d̪] vs [dʲ]">[d̪] vs [dʲ]</h4>
         <div class="alveolar">

@@ -1,7 +1,7 @@
 {% extends 'main/pattern.html' %}
 {% load static %}
 
-{% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/consonants_pattern_.css' %}">{% endblock %}
+{% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/pattern_separate_sounds.css' %}">{% endblock %}
 {% block content %}
 <main>
     <div class="header">
@@ -10,8 +10,8 @@
     </div>
 
     <div class="main_content">
-        <div class="content">
-            <h5>Content</h5>
+        <!--<div class="content">
+            <h6>Content</h6>
             {% for el in information%}
             <a href="#sound1">{{el.sound}}</a>
             {%endfor%}
@@ -28,7 +28,7 @@
                 <li><a href="#examples2">Pertinent letter/s</a></li>
                 <li><a href="#description2">Description of articulation</a></li>
             </ul>
-        </div>
+        </div> -->
         {% for el in information%}
         <h3 id="sound1">Articulation of the sound {{el.sound}}</h3>
             <div class="alert alert-custom  fade in alert-dismissable show mt-2">

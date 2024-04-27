@@ -1,19 +1,42 @@
 {% extends 'main/pattern_for_vowels.html' %}
+{% load i18n %}
 {% load static %}
+
+{% block lang_switch %}
+<div class="dropleft">
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {% translate "Мова:" %}
+      </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+
+            {% for lang in languages %}
+                <li>
+                    <a class="dropdown-item" href="/{{lang.code}}/sound_u">
+                        {{ lang.name_local }}
+                    </a>
+                </li>
+            {%endfor%}
+        </ul>
+    </div>
+{% endblock %}
 
 {% block sound %}[u]{% endblock %}
 {% block phoneme %}/u/{% endblock %}
 {% block letter %}у, ю{% endblock %}
-{% block examples %}<i>In other languages:</i>
-English (American): [u] in <i>t<b>oo</b>l</i>;
-German: [u] in <i><b>U</b>hr</i>, <i>g<b>u</b>t</i>;
+{% block examples %}<i>{% translate "In other languages:" %}</i>
+{% translate "English (American):" %} [u] {% translate "in" %} <i>t<b>oo</b>l</i>;
+{% translate "German:" %} [u] {% translate "in" %} <i><b>U</b>hr</i>, <i>g<b>u</b>t</i>;
 
-<i>Pertinent letter/s</i>
+<i>{% translate "Pertinent letter/s" %}</i>
 <b>1) у: </b>р<b>у</b>ка /r<b>u</b>'kɑ/ (noun, f., sing.) - 1) arm; 2) hand
 <b>2) ю: </b>
-<b>2.1)</b> <i>after a consonant</i> stands for u-sound, making the consonant palatalised.
-For example:л<b>ю</b>бов /lʲ<b>u</b>'bɔw/ (noun, f., sing.) - love
-<b>2.2)</b> <i>after a vowel</i> and <i>at the beginning of a syllable</i> stands for two sounds: [ju].
-For example: дяку<b>ю</b> /'dʲɑkuj<b>u</b>/ - thank you<br>
+<b>2.1)</b> {% translate "<i>after a consonant</i> stands for u-sound, making the consonant palatalised." %}
+{% translate "For example" %}: л<b>ю</b>бов /lʲ<b>u</b>'bɔw/ (noun, f., sing.) - love
+<b>2.2)</b> {% translate "<i>after a vowel</i> and <i>at the beginning of a syllable</i> stands for two sounds" %}: [ju].
+{% translate "For example" %}: дяку<b>ю</b> /'dʲɑkuj<b>u</b>/ - thank you<br>
 
 {% endblock %}
