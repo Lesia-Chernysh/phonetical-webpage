@@ -32,6 +32,8 @@ def glossary(request):
 
 def pictures(request):
     information = InformationAboutVowels.objects.filter(row__contains='передній').order_by('id')
+    information_i = InformationAboutVowels.objects.filter(sound__contains='і')
+    information_y = InformationAboutVowels.objects.filter(sound__contains='ɪ')
     information2 = InformationAboutVowels.objects.filter(row__contains='задній').order_by('id')
     information_p = InformationAboutConsonants.objects.filter(sound__contains='p')
     information_f = InformationAboutConsonants.objects.filter(sound__contains='f')
@@ -55,7 +57,8 @@ def pictures(request):
     information_g = InformationAboutConsonants.objects.filter(sound__contains='g')
     information_x = InformationAboutConsonants.objects.filter(sound__contains='x')
     information_ɦ = InformationAboutConsonants.objects.filter(sound__contains='ɦ')
-    return render(request, 'main/pictures.html', {'information': information,'information2':information2,
+    return render(request, 'main/pictures.html', {'information': information, 'information_i': information_i,
+        'information_y': information_y, 'information2':information2,
         'information_p':information_p, 'information_f':information_f, 'information_d':information_d,
         'information_t': information_t, 'information_dz': information_dz, 'information_ts': information_ts,
         'information_l': information_l, 'information_r': information_r,

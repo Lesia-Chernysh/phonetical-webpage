@@ -1,7 +1,30 @@
 {% extends 'main/pattern.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/illustration_css.css' %}">{% endblock %}
+
+{% block lang_switch %}
+<div class="dropleft">
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {% translate "Lang.:" %}
+      </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+
+            {% for lang in languages %}
+                <li>
+                    <a class="dropdown-item" href="/{{lang.code}}/pictures">
+                        {{ lang.name_local }}
+                    </a>
+                </li>
+            {%endfor%}
+        </ul>
+    </div>
+{% endblock %}
 
 {% block content %}
 <main>
@@ -27,9 +50,19 @@
         </ul>
     </div>
 
+
     <div class="main_content">
         <h3>Vowels</h3>
         <h4 id = '[ɪ] vs [i]'>[ɪ] vs [i]</h4>
+        <div class="scroll-container">
+            {% for el in information_y%}
+                <img src={{el.image.url}} alt="Звук">
+            {%endfor%}
+            {% for el in information_i%}
+                <img src={{el.image.url}} alt="Звук">
+            {%endfor%}
+        </div>
+
         <div class="vowels">
         {% for el in information%}
             {% if el.sound == '[і]' or el.sound == '[ɪ]' %}
@@ -48,6 +81,7 @@
         <div class="explanation">
             {% block explanation_i_y %} {%endblock%}
         </div>
+
 
         <h3>Plain vs palatalized</h3>
         <h4 id="[d̪] vs [dʲ]">[d̪] vs [dʲ]</h4>
