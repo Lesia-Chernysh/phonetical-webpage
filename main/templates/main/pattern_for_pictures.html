@@ -54,13 +54,50 @@
     <div class="main_content">
         <h3>Vowels</h3>
         <h4 id = '[ɪ] vs [i]'>[ɪ] vs [i]</h4>
-        <div class="scroll-container">
-            {% for el in information_y%}
-                <img src={{el.image.url}} alt="Звук">
-            {%endfor%}
-            {% for el in information_i%}
-                <img src={{el.image.url}} alt="Звук">
-            {%endfor%}
+        <div class="for_smartphone">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    {% for el in information_y%}
+                        <img src={{el.image.url}} alt="Звук">
+                    {%endfor%}
+                    </div>
+                    <div class="carousel-item">
+                    {% for el in information_i%}
+                        <img src={{el.image.url}} alt="Звук">
+                    {%endfor%}
+                    </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+              </a>
+            </div>
+
+            <p>Use the horizontal scrollbar to see another image</p>
+
+            <div class="group_audios">
+                {% for el in information_y%}
+                    <p>Play to listen to [ɪ]</p>
+                    <figure>
+                        <audio controls src={{el.audio.url}}>
+                            Your browser does not support the <code>audio</code> element.
+                        </audio>
+                    </figure>
+                {%endfor%}
+                {% for el in information_i%}
+                    <p>Play to listen to [i]</p>
+                    <figure>
+                        <audio controls src={{el.audio.url}}>
+                            Your browser does not support the <code>audio</code> element.
+                        </audio>
+                    </figure>
+                {%endfor%}
+            </div>
         </div>
 
         <div class="vowels">
