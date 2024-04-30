@@ -59,6 +59,12 @@ main p{font-size: 16px; white-space: pre-line;}
     .explanation {width:95%;}
     figure {margin-bottom: 0px; margin-top: 0px;}
     .for_smartphone > p {font-size: .8em;}
+    .carousel-item {width:85%;}
+    .carousel-item img {
+        margin-bottom: 50%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
     .group_audios > p {font-size: .8em;}
     audio {width: 70%; padding-top:5%;}
 }

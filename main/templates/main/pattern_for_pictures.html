@@ -54,31 +54,42 @@
     <div class="main_content">
         <h3>Vowels</h3>
         <h4 id = '[ɪ] vs [i]'>[ɪ] vs [i]</h4>
+
         <div class="for_smartphone">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleControls" class="carousel carousel-dark slide"  data-bs-interval="true">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                     {% for el in information_y%}
-                        <img src={{el.image.url}} alt="Звук">
+                        <img src={{el.image.url}} class="d-block w-100" alt="Звук">
+                        <div class="carousel-caption">
+                            <p>Артикуляція [ɪ]</p>
+                        </div>
                     {%endfor%}
                     </div>
                     <div class="carousel-item">
                     {% for el in information_i%}
-                        <img src={{el.image.url}} alt="Звук">
+                        <img src={{el.image.url}} class="d-block w-100" alt="Звук">
+                        <div class="carousel-caption">
+                            <p>Артикуляція [i]</p>
+                        </div>
                     {%endfor%}
                     </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
               </a>
               <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
               </a>
             </div>
 
-            <p>Use the horizontal scrollbar to see another image</p>
+            <p>Swipe to the right to see the articulation of [i].</p>
 
             <div class="group_audios">
                 {% for el in information_y%}
