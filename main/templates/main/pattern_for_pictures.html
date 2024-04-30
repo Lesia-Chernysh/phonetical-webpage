@@ -56,7 +56,7 @@
         <h4 id = '[ɪ] vs [i]'>[ɪ] vs [i]</h4>
 
         <div class="for_smartphone">
-            <div id="carouselExampleControls" class="carousel carousel-dark slide"  data-bs-interval="true">
+            <div id="carouselExampleControls" class="carousel carousel-dark slide"  data-bs-interval=none>
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -64,17 +64,27 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                     {% for el in information_y%}
-                        <img src={{el.image.url}} class="d-block w-100" alt="Звук">
+                        <img src={{el.image.url}} class="d-block w-95" alt="Звук">
                         <div class="carousel-caption">
                             <p>Артикуляція [ɪ]</p>
+                            <figure>
+                                <audio controls src={{el.audio.url}}>
+                                    Your browser does not support the <code>audio</code> element.
+                                </audio>
+                            </figure>
                         </div>
                     {%endfor%}
                     </div>
                     <div class="carousel-item">
                     {% for el in information_i%}
-                        <img src={{el.image.url}} class="d-block w-100" alt="Звук">
+                        <img src={{el.image.url}} class="d-block w-95" alt="Звук">
                         <div class="carousel-caption">
                             <p>Артикуляція [i]</p>
+                            <figure>
+                                <audio controls src={{el.audio.url}}>
+                                    Your browser does not support the <code>audio</code> element.
+                                </audio>
+                            </figure>
                         </div>
                     {%endfor%}
                     </div>
@@ -90,25 +100,6 @@
             </div>
 
             <p>Swipe to the right to see the articulation of [i].</p>
-
-            <div class="group_audios">
-                {% for el in information_y%}
-                    <p>Play to listen to [ɪ]</p>
-                    <figure>
-                        <audio controls src={{el.audio.url}}>
-                            Your browser does not support the <code>audio</code> element.
-                        </audio>
-                    </figure>
-                {%endfor%}
-                {% for el in information_i%}
-                    <p>Play to listen to [i]</p>
-                    <figure>
-                        <audio controls src={{el.audio.url}}>
-                            Your browser does not support the <code>audio</code> element.
-                        </audio>
-                    </figure>
-                {%endfor%}
-            </div>
         </div>
 
         <div class="vowels">
@@ -131,8 +122,61 @@
         </div>
 
 
+
         <h3>Plain vs palatalized</h3>
         <h4 id="[d̪] vs [dʲ]">[d̪] vs [dʲ]</h4>
+
+         <div class="for_smartphone">
+            <div id="carouselExampleControls2" class="carousel carousel-dark slide"  data-bs-interval=none>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        {% for el in information_d%}
+                            {% if el.sound == '[d̪]' %}
+                                <img src={{el.image.url}} class="d-block w-95" alt="Звук">
+                                <div class="carousel-caption">
+                                    <p>Артикуляція {{el.sound}}</p>
+                                    <figure>
+                                        <audio controls src={{el.audio.url}}>
+                                            Your browser does not support the <code>audio</code> element.
+                                        </audio>
+                                    </figure>
+                                </div>
+                            {%endif%}
+                        {%endfor%}
+                    </div>
+                    <div class="carousel-item active">
+                        {% for el in information_d%}
+                            {% if el.sound == '[dʲ]' %}
+                                <img src={{el.image.url}} class="d-block w-95" alt="Звук">
+                                <div class="carousel-caption">
+                                    <p>Артикуляція {{el.sound}}</p>
+                                    <figure>
+                                        <audio controls src={{el.audio.url}}>
+                                            Your browser does not support the <code>audio</code> element.
+                                        </audio>
+                                    </figure>
+                                </div>
+                            {%endif%}
+                        {%endfor%}
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+
+            <p>Swipe to the right to see the articulation of [i].</p>
+        </div>
+
         <div class="alveolar">
         {% for el in information_d%}
             <div class="alert alert-custom  fade in alert-dismissable show mt-2">
@@ -225,6 +269,54 @@
 
         <h3>Others</h3>
         <h4 id="[p] vs [f]">[p] vs [f]</h4>
+
+        <div class="for_smartphone">
+            <div id="carouselExampleControls" class="carousel carousel-dark slide"  data-bs-interval='ride'>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    {% for el in information_p%}
+                        <img src={{el.image.url}} class="d-block w-95" alt="Звук">
+                        <div class="carousel-caption">
+                            <p>Артикуляція [p]</p>
+                            <figure>
+                                <audio controls src={{el.audio.url}}>
+                                    Your browser does not support the <code>audio</code> element.
+                                </audio>
+                            </figure>
+                        </div>
+                    {%endfor%}
+                    </div>
+                    <div class="carousel-item">
+                    {% for el in information_f%}
+                        <img src={{el.image.url}} class="d-block w-95" alt="Звук">
+                        <div class="carousel-caption">
+                            <p>Артикуляція [f]</p>
+                            <figure>
+                                <audio controls src={{el.audio.url}}>
+                                    Your browser does not support the <code>audio</code> element.
+                                </audio>
+                            </figure>
+                        </div>
+                    {%endfor%}
+                    </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+            </div>
+
+            <p>Swipe to the right to see the articulation of [f].</p>
+        </div>
+
         <div class="others">
             {% for el in information_p %}
                 <div class="alert alert-custom  fade in alert-dismissable show mt-2">
