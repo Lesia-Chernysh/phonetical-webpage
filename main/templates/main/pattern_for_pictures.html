@@ -6,24 +6,24 @@
 
 {% block lang_switch %}
 <div class="dropleft">
-      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         {% translate "Lang.:" %}
-      </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            {% get_current_language as LANGUAGE_CODE %}
-            {% get_available_languages as LANGUAGES %}
-            {% get_language_info_list for LANGUAGES as languages %}
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
 
-            {% for lang in languages %}
-                <li>
-                    <a class="dropdown-item" href="/{{lang.code}}/pictures">
-                        {{ lang.name_local }}
-                    </a>
-                </li>
-            {%endfor%}
-        </ul>
-    </div>
+        {% for lang in languages %}
+        <li>
+            <a class="dropdown-item" href="/{{lang.code}}/pictures">
+                {{ lang.name_local }}
+            </a>
+        </li>
+        {%endfor%}
+    </ul>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -88,15 +88,15 @@
                         </div>
                     {%endfor%}
                     </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </a>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
             </div>
 
             <p>Swipe to the right to see the articulation of [i].</p>
@@ -117,6 +117,7 @@
             {%endif%}
         {%endfor%}
         </div>
+
         <div class="explanation">
             {% block explanation_i_y %} {%endblock%}
         </div>
@@ -164,18 +165,17 @@
                         {%endfor%}
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </a>
             </div>
-
-            <p>Swipe to the right to see the articulation of [i].</p>
-        </div>
+            <p>Swipe to the right to see the articulation of [dʲ].</p>
+         </div>
 
         <div class="alveolar">
         {% for el in information_d%}
@@ -271,7 +271,7 @@
         <h4 id="[p] vs [f]">[p] vs [f]</h4>
 
         <div class="for_smartphone">
-            <div id="carouselExampleControls" class="carousel carousel-dark slide"  data-bs-interval='ride'>
+            <div id="carouselExampleControls8" class="carousel carousel-dark slide"  data-bs-interval='ride'>
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -304,11 +304,11 @@
                     {%endfor%}
                     </div>
               </div>
-              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <a class="carousel-control-prev" href="#carouselExampleControls8" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
               </a>
-              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <a class="carousel-control-next" href="#carouselExampleControls8" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </a>
@@ -381,9 +381,6 @@
                 </div>
             {%endfor%}
         </div>
-
-
-
     </div>
 </main>
 {% endblock %}
