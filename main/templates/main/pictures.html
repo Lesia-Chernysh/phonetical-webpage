@@ -1,9 +1,10 @@
 {% extends 'main/pattern_for_pictures.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block explanation_i_y %}
-<p>It might be important to differentiate these two vowels, as in some cases they are the only sounds making a difference between two words. For example: <i>дим-дім</i> [d̪ɪm]-[d̪im] (smoke-house), <i>лис-ліс</i> [lɪs]-[lʲis] (fox-forest), <i>злива-зліва</i> ['zlɪva]-['zlʲiva] (heavy rain - on the left) ect.</p>
-<p> Both sounds belong to front vowels, and for a non-native speaker they might sound very similar. However, there are differences in articulation: during the pronunciation of [ɪ] the tongue is placed lower compared to [i]. Try yourself, using the pictures and the audios.</p>
+<p>{% blocktrans %} It might be important to differentiate these two vowels, as in some cases they are the only sounds making a difference between two words. For example: <i>дим-дім</i> [d̪ɪm]-[d̪im] (smoke-house), <i>лис-ліс</i> [lɪs]-[lʲis] (fox-forest), <i>злива-зліва</i> ['zlɪva]-['zlʲiva] (heavy rain - on the left) ect. {% endblocktrans %}</p>
+<p>{% blocktrans %} Both sounds belong to front vowels, and for a non-native speaker they might sound very similar. However, there are differences in articulation: during the pronunciation of [ɪ] the tongue is placed lower compared to [i]. Try yourself, using the pictures and the audios. {% endblocktrans %}</p>
 {%endblock%}
 
 

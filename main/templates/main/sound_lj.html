@@ -1,6 +1,37 @@
 {% extends 'main/pattern_for_consonants.html' %}
+{% load i18n %}
 {% load static %}
+
+{% block lang_switch %}
+<div class="dropleft">
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Lang.:
+      </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+
+            {% for lang in languages %}
+                <li>
+                    <a class="dropdown-item" href="/{{lang.code}}/sound_lj">
+                        {{ lang.name_local }}
+                    </a>
+                </li>
+            {%endfor%}
+        </ul>
+    </div>
+{% endblock %}
 
 {% block sound %}[lʲ]{% endblock %}
 {% block phoneme %}/lʲ/{% endblock %}
 {% block letter %}л{% endblock %}
+{% block examples %}<i>{% translate "In other languages:" %}</i>
+There is no similar sound in English or German.
+
+<i>{% translate "Pertinent letter/s" %}:</i> <b>л</b> when followed by і, я, ю, є, ь.
+{% translate "For example" %}:
+-ліс;
+-
+{% endblock %}

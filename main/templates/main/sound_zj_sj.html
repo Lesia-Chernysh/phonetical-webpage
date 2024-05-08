@@ -1,6 +1,46 @@
 {% extends 'main/pattern_for_consonants.html' %}
+{% load i18n %}
 {% load static %}
 
-{% block sound %}[zʲ] i [sʲ]{% endblock %}
+{% block lang_switch %}
+<div class="dropleft">
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Lang.:
+      </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+
+            {% for lang in languages %}
+                <li>
+                    <a class="dropdown-item" href="/{{lang.code}}/sound_zj_sj">
+                        {{ lang.name_local }}
+                    </a>
+                </li>
+            {%endfor%}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block sound %}[zʲ] {% translate "i" %} [sʲ]{% endblock %}
 {% block phoneme %}/zʲ/ i /sʲ/{% endblock %}
 {% block letter %}з i с{% endblock %}
+
+{% block examples %}<i>{% translate "In other languages:" %}</i>
+There is no similar sound in English or German.
+
+<i>{% translate "Pertinent letter/s" %}:</i> <b>з </b> when followed by і, я, ю, є, ь.
+{% translate "For example" %}:
+-
+{% endblock %}
+
+{% block examples2 %}<i>{% translate "In other languages:" %}</i>
+There is no similar sound in English or German.
+
+<i>{% translate "Pertinent letter/s" %}:</i> <b>с </b> when followed by і, я, ю, є, ь.
+{% translate "For example" %}:
+- <b>с</b>ім /<b>sʲ</b>im/ (noun, num.) - seven;
+-
+{% endblock %}

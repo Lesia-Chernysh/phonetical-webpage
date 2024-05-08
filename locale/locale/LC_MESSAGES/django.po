@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-27 21:49+0200\n"
+"POT-Creation-Date: 2024-04-30 17:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,19 +26,23 @@ msgid "Ukrainian"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:10
-#: .\main\templates\main\home_page.html:11 .\main\templates\main\sound_a.html:9
-#: .\main\templates\main\sound_e.html:9 .\main\templates\main\sound_i.html:9
-#: .\main\templates\main\sound_o.html:9 .\main\templates\main\sound_u.html:9
-#: .\main\templates\main\sound_y.html:9
-msgid "Мова:"
+#: .\main\templates\main\home_page.html:11
+#: .\main\templates\main\pattern_for_pictures.html:11
+#: .\main\templates\main\sound_a.html:9 .\main\templates\main\sound_e.html:9
+#: .\main\templates\main\sound_i.html:9 .\main\templates\main\sound_o.html:9
+#: .\main\templates\main\sound_u.html:9 .\main\templates\main\sound_y.html:9
+msgid "Lang.:"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:30
+#: .\main\templates\main\pattern_for_pictures.html:32
 msgid "Зміст:"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:32
 #: .\main\templates\main\allsounds.html:38
+#: .\main\templates\main\pattern_for_pictures.html:33
+#: .\main\templates\main\pattern_for_pictures.html:55
 msgid "Голосні"
 msgstr ""
 
@@ -133,35 +137,35 @@ msgid "Всі"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:108
-msgid "Labial"
+msgid "Губні"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:109
-msgid "Lingual"
+msgid "Язикові"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:110
-msgid "Glottal"
+msgid "Глоткові"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:113
-msgid "Bilabial"
+msgid "Губно-губні"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:114
-msgid "Labio-dental"
+msgid "Губно-зубні"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:115
-msgid "Alveolar"
+msgid "Передньо-язикові"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:116
-msgid "Palatal"
+msgid "Середньо-язикові"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:117
-msgid "Velar"
+msgid "Задньо-язикові"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:120
@@ -169,27 +173,24 @@ msgid "Шумні"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:121
-msgid "Plosive"
+msgid "Зімкненні"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:132
-msgid "Fricativeі"
+#: .\main\templates\main\allsounds.html:170
+msgid "Щілинні"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:145
-msgid "Affricates"
+msgid "Африкати"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:158
-msgid "Sonors"
+msgid "Сонорні"
 msgstr ""
 
 #: .\main\templates\main\allsounds.html:159
-msgid "Nasal Stops"
-msgstr ""
-
-#: .\main\templates\main\allsounds.html:170
-msgid "Fricatives"
+msgid "Зімкненні носові"
 msgstr ""
 
 #: .\main\templates\main\home_page.html:31
@@ -230,28 +231,110 @@ msgstr ""
 msgid "Український фонетичний сайт"
 msgstr ""
 
-#: .\main\templates\main\pattern.html:21
+#: .\main\templates\main\pattern.html:23
 msgid "Українські звуки"
 msgstr ""
 
-#: .\main\templates\main\pattern.html:28
+#: .\main\templates\main\pattern.html:30
 msgid "Домашня сторінка"
 msgstr ""
 
-#: .\main\templates\main\pattern.html:31
+#: .\main\templates\main\pattern.html:33
 msgid "Система фонем"
 msgstr ""
 
-#: .\main\templates\main\pattern.html:34
+#: .\main\templates\main\pattern.html:36
 msgid "Схожі звуки"
 msgstr ""
 
-#: .\main\templates\main\pattern.html:37
+#: .\main\templates\main\pattern.html:39
 msgid "Тренування вимови"
 msgstr ""
 
-#: .\main\templates\main\pattern.html:40
+#: .\main\templates\main\pattern.html:42
 msgid "Словник"
+msgstr ""
+
+#: .\main\templates\main\pattern_for_pictures.html:37
+#: .\main\templates\main\pattern_for_pictures.html:126
+msgid "Тверді vs м'які"
+msgstr ""
+
+#: .\main\templates\main\pattern_for_pictures.html:46
+#: .\main\templates\main\pattern_for_pictures.html:534
+msgid "Інші"
+msgstr ""
+
+#: .\main\templates\main\pattern_for_pictures.html:69
+#: .\main\templates\main\pattern_for_pictures.html:82
+#: .\main\templates\main\pattern_for_pictures.html:109
+#: .\main\templates\main\pattern_for_pictures.html:141
+#: .\main\templates\main\pattern_for_pictures.html:156
+#: .\main\templates\main\pattern_for_pictures.html:183
+#: .\main\templates\main\pattern_for_pictures.html:208
+#: .\main\templates\main\pattern_for_pictures.html:223
+#: .\main\templates\main\pattern_for_pictures.html:250
+#: .\main\templates\main\pattern_for_pictures.html:276
+#: .\main\templates\main\pattern_for_pictures.html:291
+#: .\main\templates\main\pattern_for_pictures.html:318
+#: .\main\templates\main\pattern_for_pictures.html:344
+#: .\main\templates\main\pattern_for_pictures.html:359
+#: .\main\templates\main\pattern_for_pictures.html:386
+#: .\main\templates\main\pattern_for_pictures.html:412
+#: .\main\templates\main\pattern_for_pictures.html:427
+#: .\main\templates\main\pattern_for_pictures.html:454
+#: .\main\templates\main\pattern_for_pictures.html:480
+#: .\main\templates\main\pattern_for_pictures.html:495
+#: .\main\templates\main\pattern_for_pictures.html:522
+#: .\main\templates\main\pattern_for_pictures.html:548
+#: .\main\templates\main\pattern_for_pictures.html:561
+#: .\main\templates\main\pattern_for_pictures.html:587
+#: .\main\templates\main\pattern_for_pictures.html:626
+#: .\main\templates\main\pattern_for_pictures.html:639
+#: .\main\templates\main\pattern_for_pictures.html:652
+#: .\main\templates\main\pattern_for_pictures.html:678
+#: .\main\templates\main\pattern_for_pictures.html:690
+#: .\main\templates\main\pattern_for_pictures.html:702
+msgid "Артикуляція"
+msgstr ""
+
+#: .\main\templates\main\pattern_for_pictures.html:94
+#: .\main\templates\main\pattern_for_pictures.html:169
+#: .\main\templates\main\pattern_for_pictures.html:236
+#: .\main\templates\main\pattern_for_pictures.html:304
+#: .\main\templates\main\pattern_for_pictures.html:372
+#: .\main\templates\main\pattern_for_pictures.html:440
+#: .\main\templates\main\pattern_for_pictures.html:508
+#: .\main\templates\main\pattern_for_pictures.html:573
+#: .\main\templates\main\pattern_for_pictures.html:664
+msgid "Попередній"
+msgstr ""
+
+#: .\main\templates\main\pattern_for_pictures.html:98
+#: .\main\templates\main\pattern_for_pictures.html:173
+#: .\main\templates\main\pattern_for_pictures.html:240
+#: .\main\templates\main\pattern_for_pictures.html:308
+#: .\main\templates\main\pattern_for_pictures.html:376
+#: .\main\templates\main\pattern_for_pictures.html:444
+#: .\main\templates\main\pattern_for_pictures.html:512
+#: .\main\templates\main\pattern_for_pictures.html:577
+#: .\main\templates\main\pattern_for_pictures.html:668
+msgid "Наступний"
+msgstr ""
+
+#: .\main\templates\main\pattern_for_pictures.html:102
+#: .\main\templates\main\pattern_for_pictures.html:177
+#: .\main\templates\main\pattern_for_pictures.html:312
+#: .\main\templates\main\pattern_for_pictures.html:380
+#: .\main\templates\main\pattern_for_pictures.html:448
+#: .\main\templates\main\pattern_for_pictures.html:516
+#: .\main\templates\main\pattern_for_pictures.html:581
+#: .\main\templates\main\pattern_for_pictures.html:672
+msgid "Пролистайте праворуч, щоб побачити артикуляцію"
+msgstr ""
+
+#: .\main\templates\main\pattern_for_pictures.html:672
+msgid "і"
 msgstr ""
 
 #: .\main\templates\main\pattern_for_vowels.html:11

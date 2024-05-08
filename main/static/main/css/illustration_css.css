@@ -10,10 +10,10 @@ main {
     overflow-x: hidden; padding-top: 100px;}
 .sidebar > p {padding-left: 10px; margin-bottom:0px; font-size: 14px; color: #2F4F4F;}
 .sidebar > ul {padding-left:30px; color: #2F4F4F; font-style: italic;}
-.sidebar > ul a {padding-left:5px;  color: #2F4F4F; font-size: 14px;}
+.sidebar > ul a {padding-left:5px;  color: #2F4F4F; font-size: 14px; text-decoration: none;}
 
 .alert-custom{
-  background-color:white;
+  background-color: #FFE4E1;
   color:#2F4F4F;
   border: 1px solid;
   width:27%;
