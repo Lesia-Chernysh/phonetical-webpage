@@ -31,6 +31,7 @@
                 <li><a href="#description2">Description of articulation</a></li>
             </ul>
         </div> -->
+        {% get_current_language as LANGUAGE_CODE %}
         {% for el in information%}
         <h3>{% translate "Articulation of the sound" %} {{el.sound}}</h3>
             <div class="alert alert-custom  fade in alert-dismissable show mt-2">
@@ -42,7 +43,11 @@
                 <img src={{el.image.url}} alt="Звук">
                 <p class="examples" id="examples">{% block examples %}{% endblock %}<br></p>
                 <p><i>{% translate "Description:" %}</i></p>
-                <p class = "description" id="description">{{el.description}}</p>
+                {% if LANGUAGE_CODE == "uk" %}
+                    <p class = "description" id="description">{{el.description}}</p>
+                {%else%}
+                    <p class = "description" id="description1.2">{{el.eng_description}}</p>
+                {%endif%}
             </div>
         {%endfor%}
         {% for el in information2%}
@@ -56,7 +61,11 @@
                 <img src={{el.image.url}} alt="Звук">
                 <p class="examples" id="examples2">{% block examples2 %}{% endblock %}<br></p>
                 <p><i>{% translate "Description:" %}</i></p>
-                <p class = "description" id="description2">{{el.description}}</p>
+                {% if LANGUAGE_CODE == "uk" %}
+                    <p class = "description" id="description2">{{el.description}}</p>
+                {%else%}
+                    <p class = "description" id="description2.2">{{el.eng_description}}</p>
+                {%endif%}
             </div>
 
         {%endfor%}

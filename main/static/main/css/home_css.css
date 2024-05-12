@@ -25,3 +25,7 @@ a:hover {
     color: #F08080;
     transform: scale(1.03);
 }
+
+@media screen and (max-width:600px) {
+    .alert-custom{width: 90%}
+}

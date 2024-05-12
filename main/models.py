@@ -7,6 +7,7 @@ class InformationAboutVowels(models.Model):
     sound = models.CharField('звук', max_length=5)
     row = models.TextField('ряд', default='')
     description = models.TextField('опис вимови')
+    eng_description = models.TextField('англ. опис вимови', default='')
     image = models.ImageField('ілюстрація вимови', upload_to="media")
     audio = models.FileField(upload_to='documents/', default='')
 
@@ -18,6 +19,7 @@ class InformationAboutConsonants(models.Model):
     way_of_articulation = models.TextField('спосіб артикуляції', default='')
     palatalization = models.TextField('ступінь палаталізації', default='')
     description = models.TextField('опис вимови')
+    eng_description = models.TextField('англ. опис вимови', default='')
     image = models.ImageField('ілюстрація вимови', upload_to="media")
     audio = models.FileField(upload_to='documents/', default='')
 
