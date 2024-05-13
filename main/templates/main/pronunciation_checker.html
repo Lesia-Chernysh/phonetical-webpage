@@ -5,11 +5,18 @@
 {% block stylesheet %}<link rel="stylesheet" href="{% static 'main/css/pronunciation_checker_css.css' %}">{% endblock %}
 {% block content %}
 <main>
-  <h2></h2>
+      <h2></h2>
     <div class="alert alert-custom  fade in alert-dismissable show mt-2" style="font-size: 16px;
     text-indent: 3ch; color: #2F4F4F;">
-      <p>Засіб перевірки вимови ще перебуває на етапі розробки.</p>
-      <p>Pronunciation checking system is still being developed.</p>
+        <h4>Exercise 1.</h4>
+        {% for el in information%}
+        <p>{{el.sound}}</p>
+        <figure>
+            <audio controls src={{el.audio.url}}>
+                Your browser does not support the <code>audio</code> element.
+            </audio>
+        </figure>
+        {%endfor%}
     </div>
 </main>
 {% endblock %}

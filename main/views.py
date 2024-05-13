@@ -4,6 +4,7 @@ from django.utils.translation import get_language, activate, gettext
 
 from .models import InformationAboutVowels
 from .models import InformationAboutConsonants
+from .models import Exercises
 
 
 # Create your views here.
@@ -66,7 +67,8 @@ def pictures(request):
 
 
 def pronunciation_checker(request):
-    return render(request, 'main/pronunciation_checker.html')
+    information = Exercises.objects.order_by('id')
+    return render(request, 'main/pronunciation_checker.html', {'information': information})
 
 
 def sound_i(request):

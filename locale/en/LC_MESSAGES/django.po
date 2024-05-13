@@ -513,10 +513,9 @@ msgstr ""
 
 #: .\main\templates\main\pattern_for_consonants.html:38
 #: .\main\templates\main\pattern_for_consonants.html:61
-#, fuzzy
-#| msgid "Приголосні"
+
 msgid "Жіночий голос:"
-msgstr "Consonants"
+msgstr "Female voice"
 
 #: .\main\templates\main\pattern_for_consonants.html:43
 #: .\main\templates\main\pattern_for_consonants.html:66

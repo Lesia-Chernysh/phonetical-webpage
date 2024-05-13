@@ -25,5 +25,11 @@ class InformationAboutConsonants(models.Model):
     audio = models.FileField(upload_to='documents/', default='')
     male_audio = models.FileField(upload_to='documents/', default='')
 
+
+class Exercises(models.Model):
+    id = models.AutoField('id', primary_key=True)
+    sound = models.TextField('text', default='')
+    audio = models.FileField(upload_to='documents/', default='')
+
     def __str__(self):
         return self.sound
