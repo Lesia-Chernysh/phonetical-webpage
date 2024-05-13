@@ -1,6 +1,46 @@
 {% extends 'main/pattern_for_consonants.html' %}
+{% load i18n %}
 {% load static %}
+
+{% block lang_switch %}
+<div class="dropleft">
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {% translate "Lang.:" %}
+      </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+
+            {% for lang in languages %}
+                <li>
+                    <a class="dropdown-item" href="/{{lang.code}}/sound_g_k">
+                        {{ lang.name_local }}
+                    </a>
+                </li>
+            {%endfor%}
+        </ul>
+    </div>
+{% endblock %}
+
 
 {% block sound %}[g] i [k]{% endblock %}
 {% block phoneme %}/g/ i /k/{% endblock %}
 {% block letter %}ґ i к{% endblock %}
+
+{% block examples %}<i>{% translate "In other languages:" %}</i>
+{% translate "English:" %} similar to English /g/, but Ukrainian sound is not aspirated;
+{% translate "German:" %} /g/ {% translate "in" %} <i><b>G</b>eld</i>.
+
+<i>{% translate "Pertinent letter/s" %}</i>: <b>ґ</b>.
+{% translate "For example" %}: <b>ґ</b>удзик /'<b>g</b>udzɪk/ — button (on clothes).
+{% endblock %}
+
+{% block examples2 %}<i>In other languages:</i>
+{% translate "English:" %} similar to English /k/, but Ukrainian sound is not aspirated;
+{% translate "German:" %} /k/ {% translate "in" %} <i><b>K</b>atze</i>.
+
+<i>Pertinent letter/s</i>: <b>п</b>.
+{% translate "For example" %}: <b>к</b>іт /<b>k</b>it/ — cat.
+{% endblock %}

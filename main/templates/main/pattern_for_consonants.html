@@ -35,8 +35,13 @@
         {% for el in information%}
         <h3>{% translate "Articulation of the sound" %} {{el.sound}}</h3>
             <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <figure><figcaption>{% translate "Play the audio:" %}</figcaption>
+                <figure><figcaption>{% translate "Жіночий голос:" %}</figcaption>
                     <audio controls src={{el.audio.url}}>
+                    Your browser does not support the <code>audio</code> element.
+                    </audio>
+                </figure>
+                <figure><figcaption>{% translate "Чоловічий голос:" %}</figcaption>
+                    <audio controls src={{el.male_audio.url}}>
                     Your browser does not support the <code>audio</code> element.
                     </audio>
                 </figure>
@@ -53,8 +58,13 @@
         {% for el in information2%}
         <h3>{% translate "Articulation of the sound" %} {{el.sound}}</h3>
             <div class="alert alert-custom  fade in alert-dismissable show mt-2">
-                <figure><figcaption>{% translate "Play the audio:" %}</figcaption>
+                <figure><figcaption>{% translate "Жіночий голос:" %}</figcaption>
                     <audio controls src={{el.audio.url}}>
+                    Your browser does not support the <code>audio</code> element.
+                    </audio>
+                </figure>
+                <figure><figcaption>{% translate "Чоловічий голос:" %}</figcaption>
+                    <audio controls src={{el.male_audio.url}}>
                     Your browser does not support the <code>audio</code> element.
                     </audio>
                 </figure>

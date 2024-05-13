@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 00:07+0200\n"
+"POT-Creation-Date: 2024-05-13 04:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,8 @@ msgstr ""
 #: .\main\templates\main\allsounds.html:10
 #: .\main\templates\main\home_page.html:11
 #: .\main\templates\main\pattern_for_pictures.html:11
-#: .\main\templates\main\sound_a.html:9 .\main\templates\main\sound_e.html:9
+#: .\main\templates\main\sound_a.html:9 .\main\templates\main\sound_b_p.html:9
+#: .\main\templates\main\sound_e.html:9 .\main\templates\main\sound_g_k.html:9
 #: .\main\templates\main\sound_i.html:9 .\main\templates\main\sound_o.html:9
 #: .\main\templates\main\sound_u.html:9 .\main\templates\main\sound_y.html:9
 msgid "Lang.:"
@@ -47,236 +48,333 @@ msgid "Голосні"
 msgstr "Vowels"
 
 #: .\main\templates\main\allsounds.html:33
-#: .\main\templates\main\allsounds.html:97
+#: .\main\templates\main\allsounds.html:122
 msgid "Приголосні"
 msgstr "Consonants"
 
 #: .\main\templates\main\allsounds.html:40
 msgid ""
 "\n"
-"      В українській мові всього 6 голосних. Ви можете побачити їх в таблиці "
+"    <p>В українській мові всього 6 голосних. Ви можете побачити їх в таблиці "
 "нижче, позначених за допомогою\n"
 "      фонетичних символів МФА (міжнародного фонетичного алфавіту, англ. — "
 "ІРА).\n"
-"      За положенням язика відносно горизонтальної осі вони належать до "
-"одного з\n"
-"      <strong><i>двох рядів</i></strong>: <i>переднього</i> або <i>заднього</"
-"i>. Якщо голосний належить\n"
-"      до переднього ряду, це означає, що під час  його вимови тіло язика "
-"подається вперед. Якщо ж голосний\n"
-"      належить до заднього ряду, то тіло язика під час його вимови "
-"відтягнене назад, до стінки глотки.\n"
-"      "
-
-msgstr ""
-"\n"
-"      There are 6 vowels in Ukrainian. You can see them in the table below, "
-"denoted with\n"
-"      IPA symbols (IPA - International Phonetic Alphabet).\n"
-"      <br> Vowel length is not contrastive, so there are no short or long "
-"vowels.\n"
-"      <br> Based on the tongue's position in respect to the "
-"<i><strong>horizontal axis </strong></i> they are\n"
-"      divided into <i><strong>front</strong></i>\n"
-"      and <i><strong>back vowels</strong></i>. In the table below one can "
-"see that sounds [i], [ɪ] and [ɛ]\n"
-"      are <i>front</i>, whereas [u], [ɔ] and [ɑ] are <i>back vowels</i>. It "
-"means that during pronunciation\n"
-"      of the first group of vowels the tongue's body lays forwards. And the "
-"second group of the vowels\n"
-"      is pronounced with the tongue's body in the back of the oral cavity.\n"
-"    "
-
-#: .\main\templates\main\allsounds.html:49
-msgid ""
-"\n"
-"      Також українські голосні розрізняють за <strong><i>ступенем підняття "
-"язика</i></strong> до\n"
-"      твердого піднебіння під час їх вимови. В деяких джерелах таку "
-"класифікацію здійснюють,\n"
-"      залежно від ступеня закритості щелеп під час вимови голосних. Тоді "
-"звуки поділяють на відкриті,\n"
-"      середні та закриті. Ступінь підняття язика напряму пов'язаний із "
-"відкритістю/закритістю звука,\n"
-"      тому наведені класифікації є взаємозамінними. В українській науковій "
-"літературі поширеною є\n"
-"      класифікація за ступенем підняття язика, тому саме з нею ви можете "
-"ознайомитися в розміщенній\n"
-"      нижче таблиці.\n"
-"      "
-msgstr ""
-"\n"
-"      The position of the tongue with respect to the <i><strong>vertical "
-"axis</strong></i>,\n"
-"      namely it's <i>height</i> during pronunciation, distinguishes "
-"Ukrainian vowels as well. In the table\n"
-"      below one can see that there are <i><strong>low </strong></i> ([ɑ]), "
-"<i><strong>mid</strong></i> ([ɛ],\n"
-"      [ɔ]), <i><strong>high-mid </strong></i> ([ɪ]) and <i><strong>high </"
-"strong></i> ([i], [u]) vowels\n"
-"      in Ukrainian. It's also referred as close/open distinction between "
-"vowels, as the height of the tongue\n"
-"      directly affects the closeness of a vowel.\n"
-"    "
-
-#: .\main\templates\main\allsounds.html:59
-msgid ""
-"\n"
-"      <i>Для того, аби переглянути інформацію про особливості вимови звука, "
+"      Їх класифікують за двома параметрами: наскільки вперед просунуте тіло "
+"язика під час їхньої вимови\n"
+"      (положення відносно горизонтальної осі) та ступенем підняття язика "
+"(положення відносно вертикальної осі).</p>\n"
+"    <p>За <strong><i>положенням язика відносно горизонтальної осі</i></"
+"strong> голосні в українській мові\n"
+"        бувають:</p>\n"
+"        <ol>\n"
+"            <li><i>переднього ряду</i>: тіло язика подається вперед під час  "
+"його вимови;</li>\n"
+"            <li><i>заднього ряду</i>: тіло язика під час його вимови "
+"відтягнене назад, до стінки глотки.</li>\n"
+"        </ol>\n"
+"    <p>За <strong><i>ступенем підняття язика</i></strong> до твердого "
+"піднебіння голосні в українській мові\n"
+"        бувають:</p>\n"
+"        <ol>\n"
+"            <li><i>низького підняття</i>;</li>\n"
+"            <li><i>середнього підняття</i>;</li>\n"
+"            <li><i>високо-середнього підняття</i>;</li>\n"
+"            <li><i>високого підняття</i>.</li>\n"
+"        </ol>\n"
+"    <p>В деяких джерелах таку класифікацію здійснюють, залежно від ступеня "
+"закритості щелеп під час вимови\n"
+"        голосних. Тоді звуки поділяють на відкриті, середні та закриті. "
+"Ступінь підняття язика напряму\n"
+"        пов'язаний із відкритістю/закритістю звука, тому наведені "
+"класифікації є взаємозамінними.\n"
+"        В українській науковій літературі поширеною є класифікація за "
+"ступенем підняття язика, тому саме\n"
+"        з нею ви можете ознайомитися в розміщенній нижче таблиці.</p>\n"
+"    <p>Також голосні відрізняються за такою ознакою як <strong><i>форма губ</"
+"i></strong> під час їхнього\n"
+"        творення. Так вони можуть бути:</p>\n"
+"    <ol>\n"
+"        <li><i>огублені (лабіалізовані)</i>: губи заокруглені, трохи випнуті "
+"вперед. До огублених належать\n"
+"        звуки [u] ([у]) й [ɔ] ([о])</li>\n"
+"        <li><i>неогублені (нелабіалізовані): губи нейтральні або розтягнуті "
+"вбоки</i>. До них належать усі\n"
+"            інші звуки.</li>\n"
+"    </ol>\n"
+"    <p><i>Для того, аби переглянути інформацію про особливості вимови звука, "
 "який вас цікавить, натисніть\n"
-"      на нього курсором.</i>\n"
-"      "
-msgstr ""
-"\n"
-"      In order to <strong>watch details about the pronunciation</strong> of "
-"each sound press it's symbol\n"
-"      in the table.\n"
+"      на нього курсором.</i></p>\n"
 "    "
+msgstr ""
+"<p>There are 6 vowels in Ukrainian. You can see them in the table below, "
+"denoted with IPA signs (International Phonetic Alphabet).      They are "
+"classified according to two parameters: frontness of the tongue at the "
+"moment of sound creation and its height.</p>\n"
+"    <p>According to their <strong><i>frontness</i></strong> Ukrainian vowels "
+"can be:\n"
+"<ol>\n"
+"            <li><i>front</i>;</li>\n"
+"            <li><i>back</i>;</li>\n"
+"        </ol>\n"
+"    <p>According to their <strong><i>height</i></strong>Ukrainian vowels can "
+"be:</p>\n"
+"        <ol>\n"
+"            <li><i>low</i>;</li>\n"
+"            <li><i>mid</i>;</li>\n"
+"            <li><i>high-mid</i>;</li>\n"
+"            <li><i>high</i>.</li>\n"
+"        </ol>\n"
+"    <p>In some classifications vowels are classified according to how much "
+"the jaw is open.Then vowels can be open, mid and close.But the height of "
+"vowels directly connected with their openness, so those two "
+"classificationsare mutually substitutable.</p>\n"
+"    <p>Vowels also differ from each other with the form of the lips. "
+"<strong><i></i></strong>According to that parameter they can be:</p>\n"
+"    <ol>\n"
+"        <li><i>rounded</i>: lips are rounded and a bit protruded. Rounded "
+"are [u] ([у]) й [ɔ] ([о])</li>\n"
+"        <li><i>unrounded: lips are either neutral or spread</i>. All ather "
+"vowels are unrounded.</li>\n"
+"    </ol>\n"
+"    <p><i>In order to see the information about any sound press it in the "
+"table.</i></p>\n"
 
-#: .\main\templates\main\allsounds.html:69
+#: .\main\templates\main\allsounds.html:81
 msgid "Передній ряд"
 msgstr "Front"
 
-#: .\main\templates\main\allsounds.html:70
+#: .\main\templates\main\allsounds.html:82
 msgid "Задній ряд"
 msgstr "Back"
 
-#: .\main\templates\main\allsounds.html:73
+#: .\main\templates\main\allsounds.html:85
 msgid "Високе підняття"
 msgstr "High"
 
-#: .\main\templates\main\allsounds.html:78
+#: .\main\templates\main\allsounds.html:94
 msgid "Високо-середнє підняття"
 msgstr "High-mid"
 
-#: .\main\templates\main\allsounds.html:83
+#: .\main\templates\main\allsounds.html:101
 msgid "Середнє підняття"
 msgstr "Mid"
 
-#: .\main\templates\main\allsounds.html:88
+#: .\main\templates\main\allsounds.html:110
 msgid "Низьке підняття"
 msgstr "Low"
 
-#: .\main\templates\main\allsounds.html:99
+#: .\main\templates\main\allsounds.html:124
 msgid ""
 "\n"
 "    <p>\n"
-"    Приголосні звуки в українській мові відрізняються за <strong><i>місцем і "
-"способом творення</i></strong>,\n"
-"        за <strong><i>участю голосу й шуму</i></strong>, за "
-"<strong><i>участю голосових\n"
-"        зв’язок</i></strong> та за <strong><i>ступенем палаталізації</i></"
-"strong>. Цю класифікацію\n"
-"        відображено в таблиці знизу.\n"
+"    Приголосні звуки в українській мові відрізняються за місцем і способом "
+"творення, за участю голосу й шуму,\n"
+"        за участю голосових зв’язок та за ступенем палаталізації. Цю "
+"класифікацію відображено в таблиці знизу.\n"
 "        <br>\n"
-"        <br><strong>За способом творення</strong> приголосні бувають:\n"
+"        <br><strong><i>Спососіб творення</i></strong>. Спосіб творення "
+"приголосних — спосіб утворення шуму\n"
+"        й фокусу. За цією ознакою українські приголосні бувають:\n"
 "    </p>\n"
 "    <ol>\n"
-"        <li>зімкненими (проривними)</li>\n"
-"        <li>щілинними (фрикативними)</li>\n"
-"        <li>зімкнено-щілинними (африкатами)</li>\n"
-"        <li>зімкнено-прохідними</li>\n"
+"        <li><i>зімкненими (проривними)</i>: шум утворюється внаслідок "
+"повного зімкнення й раптового\n"
+"        розімкнення мовних органів, утворюючи так званий вибух.</li>\n"
+"        <li><i>щілинними (фрикативними)</i>: два мовних органи зближуються і "
+"між ними\n"
+"        залишається щілина, крізь яку під час творення звуку проходить "
+"повітря. Внаслідок цього утворюється\n"
+"        шум.</li>\n"
+"        <li><i>зімкнено-щілинними (африкатами)</i>: два мовних органи "
+"утворюють зімкнення, але потім відбувається\n"
+"            не вибух, як при [д] або [т], а це зімкнення поступово "
+"переходить у щілину.</li>\n"
+"        <li><i>зімкнено-прохідними (назальними)</i>: два мовних органи "
+"утворюють зімкнення, але їх розімкнення\n"
+"        і відповідно вибуху не відбувається, бо м'яке піднебіння "
+"опускається, дозволяючи струменю повітря\n"
+"        проходити крізь носову порожнину.</li>\n"
 "    </ol>\n"
-"    <p><strong>За місцем творення</strong> в українській науковій літературі "
-"приголосні поділяють на:</p>\n"
+"    <p><strong>Місце творення</strong>. Місце творення приголосних — місце "
+"розташування фокусу (повна\n"
+"        чи часткова перепона, що утворюється внаслідок зімкнення або "
+"зближення двох мовних органів,\n"
+"        що призводить до утворення шуму і як наслідок — певного звуку). В "
+"українській науковій літературі\n"
+"        приголосні за цією ознакою поділяють на:</p>\n"
 "    <ol>\n"
-"        <li>губні (лабіальні)</li>\n"
-"        <li>язикові</li>\n"
-"        <li>глоткові (фарингальні)</li>\n"
+"        <li><i>губні (лабіальні)</i>:\n"
+"            <ul><li><i>губно-губні</i>. Звук утворюється внаслідок зімкнення "
+"або зближення губ.</li>\n"
+"                <li><i>губно-зубні</i>. Звук утворюється внаслідок зімкнення "
+"нижньої губи з верхніми\n"
+"                передніми зубами.</li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li><i>язикові (лінгвальні)</i>:\n"
+"            <ul><li><i>передньоязикові</i>. Звук утворюється внаслідок "
+"зімкнення або зближення кінчика\n"
+"                язика з певним пасивним органом (верхніми передніми зубами, "
+"яснами).</li>\n"
+"                <li><i>середньоязикові</i>. Звук утворюється внаслідок "
+"зближення середньої частини спинки язика\n"
+"                із твердим піднебінням.</li>\n"
+"                <li><i>задньоязикові</i>. Звук утворюється внаслідок "
+"зімкнення або зближення задньої частини язика\n"
+"                    з м’яким піднебінням.</li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li><i>глоткові (фарингальні)</i>. Звук утворюється внаслідок "
+"зближення кореня язика зі стінкою глотки.</li>\n"
 "    </ol>\n"
 "    <p><strong>За участю голосу й шуму</strong> приголосні бувають:</p>\n"
 "    <ol>\n"
-"        <li>шумні</li>\n"
-"        <li>сонорні</li>\n"
+"        <li><i>шумні</i>: шум переважає над голосом.</li>\n"
+"        <li><i>сонорні</i>: голос переважає над шумом.</li>\n"
 "    </ol>\n"
 "    <p><strong>За участю голосових зв’язок</strong> приголосні бувають:</p>\n"
 "    <ol>\n"
-"        <li>дзвінкі</li>\n"
-"        <li>глухі</li>\n"
+"        <li><i>дзвінкі</i>: голосові зв'язки вібрують під час вимови звуку.</"
+"li>\n"
+"        <li><i>глухі</i>: голосові зв'язки не вібрують під час вимови звуку."
+"</li>\n"
 "    </ol>\n"
 "    <p><strong>За ступенем палаталізації</strong> приголосні можуть бути:</"
 "p>\n"
 "    <ol>\n"
-"        <li>тверді</li>\n"
-"        <li>м'які</li>\n"
+"        <li><i>тверді</i>: спинка язика плоска або ввігнута.</li>\n"
+"        <li><i>м'які</i>: артикулюються з опуклою в передній і середній "
+"частинах спинкою язика, що наближується\n"
+"            до твердого піднебіння.</li>\n"
 "    </ol>\n"
+"    <p><i>Для того, аби переглянути інформацію про особливості вимови звука, "
+"який вас цікавить, натисніть\n"
+"      на нього курсором.</i></p>\n"
 "    "
 msgstr ""
+"    Ukrainian consonants differs according to their place and manner of "
+"articulation, degreeof palatalization and vocal folds acivity. This "
+"classification you can see in the table below.\n"
+"        <br>\n"
+"        <br><strong><i>Manner of articulation</i></strong>. Manner of "
+"articulation is the way the noise and focus are formed. According to this "
+"parameter Ukrainian sounds can be:\n"
+"    </p>\n"
+"    <ol>\n"
+"        <li><i>plosive (stops)</i>.</li>\n"
+"        <li><i>fricatives</i>.</li>\n"
+"        <li><i>affricates</i>.</li>\n"
+"        <li><i>nasal</i>.</li>\n"
+"    </ol>\n"
+"    <p><strong>Place of articulation</strong>. Place of focus (focus is a "
+"complete or partial obstacle formed by two articulators contacting or "
+"approaching each other which results in creating a noice or so-called "
+"explosion). В According to that they can be:</p>\n"
+"    <ol>\n"
+"        <li><i>labial</i>:\n"
+"            <ul><li><i>bilabial</i>.</li>\n"
+"                <li><i>labiodentlal</i>.</li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li><i>lingual</i>:\n"
+"            <ul><li><i>forelingual</i>.</li>\n"
+"                <li><i>mediolingual </i>.</li>\n"
+"                <li><i>backlibgual</i>.</li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li><i>pharyngal</i>.</li>\n"
+"    </ol>\n"
+"    <p><strong>According to the activity of vocal folds</strong> consonants "
+"can be:</p>\n"
+"    <ol>\n"
+"        <li><i>voiced</i>: голосові зв'язки вібрують під час вимови звуку.</"
+"li>\n"
+"        <li><i>voiceless</i>.</li>\n"
+"    </ol>\n"
+"    <p><strong>According to the degree of palatalization</strong>  "
+"consonants can:</p>\n"
+"    <ol>\n"
+"        <li><i>plane (not-palatalized)</i>: the back of the tongue is flat "
+"or concave..</li>\n"
+"        <li><i>palatalized (soft)</i>: Articulated with the convex front and "
+"middle parts of the tongue, which approaches the hard palate.</li>\n"
+"    </ol>\n"
+"    "
 
-#: .\main\templates\main\allsounds.html:138
+#: .\main\templates\main\allsounds.html:187
 msgid "Тверді"
 msgstr "Plain"
 
-#: .\main\templates\main\allsounds.html:139
+#: .\main\templates\main\allsounds.html:188
 msgid "М'які"
 msgstr "Palatalized"
 
-#: .\main\templates\main\allsounds.html:140
+#: .\main\templates\main\allsounds.html:189
 msgid "Дзвінкі"
 msgstr "Voiced"
 
-#: .\main\templates\main\allsounds.html:141
+#: .\main\templates\main\allsounds.html:190
 msgid "Глухі"
 msgstr "Voiceless"
 
-#: .\main\templates\main\allsounds.html:142
+#: .\main\templates\main\allsounds.html:191
 msgid "Всі"
 msgstr "All"
 
-#: .\main\templates\main\allsounds.html:149
+#: .\main\templates\main\allsounds.html:198
 msgid "Губні"
 msgstr "Labial"
 
-#: .\main\templates\main\allsounds.html:150
+#: .\main\templates\main\allsounds.html:199
 msgid "Язикові"
 msgstr "Lingual"
 
-#: .\main\templates\main\allsounds.html:151
+#: .\main\templates\main\allsounds.html:200
 msgid "Глоткові"
 msgstr "Glottal"
 
-#: .\main\templates\main\allsounds.html:154
+#: .\main\templates\main\allsounds.html:203
 msgid "Губно-губні"
 msgstr "Bilabial"
 
-#: .\main\templates\main\allsounds.html:155
+#: .\main\templates\main\allsounds.html:204
 msgid "Губно-зубні"
 msgstr "Labio-dental"
 
-#: .\main\templates\main\allsounds.html:156
+#: .\main\templates\main\allsounds.html:205
 msgid "Передньо-язикові"
-msgstr "Alveolar"
+msgstr "Forelingual"
 
-#: .\main\templates\main\allsounds.html:157
+#: .\main\templates\main\allsounds.html:206
 msgid "Середньо-язикові"
-msgstr "Palatal"
+msgstr "Mediolingual "
 
-#: .\main\templates\main\allsounds.html:158
+#: .\main\templates\main\allsounds.html:207
 msgid "Задньо-язикові"
-msgstr "Velar"
+msgstr "Backlibgual"
 
-#: .\main\templates\main\allsounds.html:161
+#: .\main\templates\main\allsounds.html:210
 msgid "Шумні"
-msgstr ""
+msgstr "Non-sonors"
 
-#: .\main\templates\main\allsounds.html:162
+#: .\main\templates\main\allsounds.html:211
 msgid "Зімкненні"
 msgstr "Plosive"
 
-#: .\main\templates\main\allsounds.html:173
-#: .\main\templates\main\allsounds.html:211
+#: .\main\templates\main\allsounds.html:222
+#: .\main\templates\main\allsounds.html:260
 msgid "Щілинні"
 msgstr "Fricatives"
 
-#: .\main\templates\main\allsounds.html:186
+#: .\main\templates\main\allsounds.html:235
 msgid "Африкати"
 msgstr "Affricates"
 
-#: .\main\templates\main\allsounds.html:199
+#: .\main\templates\main\allsounds.html:248
 msgid "Сонорні"
 msgstr "Sonors"
 
-#: .\main\templates\main\allsounds.html:200
+#: .\main\templates\main\allsounds.html:249
 msgid "Зімкненні носові"
 msgstr "Nasal Stops"
 
@@ -318,7 +416,6 @@ msgid ""
 "алфавіту (ІРА).\n"
 "\n"
 "            "
-
 msgstr ""
 "<strong>For philology students.</strong> Dear students, in <a href="
 "\"allsounds\"><i>\"Phonemes\"system\"</i></a> you'll find a short "
@@ -352,7 +449,6 @@ msgid ""
 "            за допомогою вправ ви можете <a href=\"pronunciation_checker"
 "\"><i>потренувати власну вимову</i></a>\n"
 "            "
-
 msgstr ""
 "<strong>For Ukrainian learners.</strong> Dear learners, you can get familiar "
 "with the phonetical system and sounds of Ukrainian in <a href=\"allsounds"
@@ -398,6 +494,40 @@ msgstr "Pronunciation Training"
 #: .\main\templates\main\pattern.html:42
 msgid "Словник"
 msgstr "Glossary"
+
+#: .\main\templates\main\pattern_for_consonants.html:10
+#: .\main\templates\main\pattern_for_vowels.html:10
+msgid "Phoneme"
+msgstr ""
+
+#: .\main\templates\main\pattern_for_consonants.html:11
+#: .\main\templates\main\pattern_for_vowels.html:11
+msgid "Letters:"
+msgstr ""
+
+#: .\main\templates\main\pattern_for_consonants.html:36
+#: .\main\templates\main\pattern_for_consonants.html:59
+#: .\main\templates\main\pattern_for_vowels.html:25
+msgid "Articulation of the sound"
+msgstr ""
+
+#: .\main\templates\main\pattern_for_consonants.html:38
+#: .\main\templates\main\pattern_for_consonants.html:61
+#, fuzzy
+#| msgid "Приголосні"
+msgid "Жіночий голос:"
+msgstr "Consonants"
+
+#: .\main\templates\main\pattern_for_consonants.html:43
+#: .\main\templates\main\pattern_for_consonants.html:66
+msgid "Чоловічий голос:"
+msgstr "Male voice"
+
+#: .\main\templates\main\pattern_for_consonants.html:50
+#: .\main\templates\main\pattern_for_consonants.html:73
+#: .\main\templates\main\pattern_for_vowels.html:34
+msgid "Description:"
+msgstr ""
 
 #: .\main\templates\main\pattern_for_pictures.html:37
 #: .\main\templates\main\pattern_for_pictures.html:126
@@ -481,24 +611,8 @@ msgstr "Swipe to the right to see the articulation of"
 msgid "і"
 msgstr "and"
 
-#: .\main\templates\main\pattern_for_vowels.html:11
-msgid "Phoneme"
-msgstr ""
-
-#: .\main\templates\main\pattern_for_vowels.html:12
-msgid "Letters:"
-msgstr ""
-
-#: .\main\templates\main\pattern_for_vowels.html:25
-msgid "Articulation of the sound"
-msgstr ""
-
 #: .\main\templates\main\pattern_for_vowels.html:27
 msgid "Play the audio:"
-msgstr ""
-
-#: .\main\templates\main\pattern_for_vowels.html:34
-msgid "Description:"
 msgstr ""
 
 #: .\main\templates\main\pictures.html:6
@@ -518,9 +632,21 @@ msgid ""
 "yourself, using the pictures and the audios. "
 msgstr ""
 
-#: .\main\templates\main\sound_a.html:30 .\main\templates\main\sound_e.html:30
-#: .\main\templates\main\sound_i.html:30 .\main\templates\main\sound_o.html:30
-#: .\main\templates\main\sound_u.html:30 .\main\templates\main\sound_y.html:30
+#: .\main\templates\main\sound_a.html:30
+#: .\main\templates\main\sound_b_p.html:31
+#: .\main\templates\main\sound_d_t.html:30
+#: .\main\templates\main\sound_dj_tj.html:30
+#: .\main\templates\main\sound_dj_tj.html:40
+#: .\main\templates\main\sound_dzj_tsj.html:30
+#: .\main\templates\main\sound_dzj_tsj.html:38
+#: .\main\templates\main\sound_e.html:30
+#: .\main\templates\main\sound_g_k.html:32
+#: .\main\templates\main\sound_i.html:30 .\main\templates\main\sound_lj.html:30
+#: .\main\templates\main\sound_nj.html:30 .\main\templates\main\sound_o.html:30
+#: .\main\templates\main\sound_rj.html:30 .\main\templates\main\sound_u.html:30
+#: .\main\templates\main\sound_y.html:30
+#: .\main\templates\main\sound_zj_sj.html:31
+#: .\main\templates\main\sound_zj_sj.html:39
 msgid "In other languages:"
 msgstr ""
 
@@ -533,10 +659,15 @@ msgid "similar to the sound"
 msgstr ""
 
 #: .\main\templates\main\sound_a.html:31 .\main\templates\main\sound_a.html:32
+#: .\main\templates\main\sound_b_p.html:33
+#: .\main\templates\main\sound_b_p.html:41
 #: .\main\templates\main\sound_e.html:31 .\main\templates\main\sound_e.html:32
+#: .\main\templates\main\sound_g_k.html:34
+#: .\main\templates\main\sound_g_k.html:42
 #: .\main\templates\main\sound_i.html:31 .\main\templates\main\sound_i.html:32
 #: .\main\templates\main\sound_o.html:31 .\main\templates\main\sound_o.html:32
 #: .\main\templates\main\sound_u.html:31 .\main\templates\main\sound_u.html:32
+#: .\main\templates\main\sound_y.html:31
 msgid "in"
 msgstr ""
 
@@ -544,29 +675,58 @@ msgstr ""
 msgid "but shorter"
 msgstr ""
 
-#: .\main\templates\main\sound_a.html:32 .\main\templates\main\sound_e.html:32
+#: .\main\templates\main\sound_a.html:32
+#: .\main\templates\main\sound_b_p.html:33
+#: .\main\templates\main\sound_b_p.html:41
+#: .\main\templates\main\sound_e.html:32
+#: .\main\templates\main\sound_g_k.html:34
+#: .\main\templates\main\sound_g_k.html:42
 #: .\main\templates\main\sound_i.html:32 .\main\templates\main\sound_o.html:32
 #: .\main\templates\main\sound_u.html:32
 msgid "German:"
 msgstr ""
 
-#: .\main\templates\main\sound_a.html:34 .\main\templates\main\sound_e.html:34
-#: .\main\templates\main\sound_i.html:34 .\main\templates\main\sound_o.html:34
-#: .\main\templates\main\sound_u.html:34
+#: .\main\templates\main\sound_a.html:34
+#: .\main\templates\main\sound_b_p.html:35
+#: .\main\templates\main\sound_d_t.html:36
+#: .\main\templates\main\sound_dj_tj.html:34
+#: .\main\templates\main\sound_dj_tj.html:43
+#: .\main\templates\main\sound_dzj_tsj.html:33
+#: .\main\templates\main\sound_dzj_tsj.html:41
+#: .\main\templates\main\sound_e.html:34
+#: .\main\templates\main\sound_g_k.html:36
+#: .\main\templates\main\sound_i.html:34 .\main\templates\main\sound_lj.html:33
+#: .\main\templates\main\sound_nj.html:33 .\main\templates\main\sound_o.html:34
+#: .\main\templates\main\sound_rj.html:33 .\main\templates\main\sound_u.html:34
+#: .\main\templates\main\sound_y.html:34
+#: .\main\templates\main\sound_zj_sj.html:34
+#: .\main\templates\main\sound_zj_sj.html:42
 msgid "Pertinent letter/s"
 msgstr ""
 
 #: .\main\templates\main\sound_a.html:37
 msgid ""
-"<i>after a consonant</i> stands for ɑ-sound, making the consonant "
-"palatalised."
+"<i>after a consonant</i> stands for ɑ-sound, and denotes the palatalisation "
+"of the consonant."
 msgstr ""
 
 #: .\main\templates\main\sound_a.html:38 .\main\templates\main\sound_a.html:40
+#: .\main\templates\main\sound_b_p.html:36
+#: .\main\templates\main\sound_b_p.html:44
+#: .\main\templates\main\sound_dj_tj.html:35
+#: .\main\templates\main\sound_dj_tj.html:44
+#: .\main\templates\main\sound_dzj_tsj.html:34
+#: .\main\templates\main\sound_dzj_tsj.html:42
 #: .\main\templates\main\sound_e.html:36 .\main\templates\main\sound_e.html:38
+#: .\main\templates\main\sound_g_k.html:37
+#: .\main\templates\main\sound_g_k.html:45
 #: .\main\templates\main\sound_i.html:36 .\main\templates\main\sound_i.html:40
-#: .\main\templates\main\sound_o.html:35 .\main\templates\main\sound_u.html:38
-#: .\main\templates\main\sound_u.html:40 .\main\templates\main\sound_y.html:32
+#: .\main\templates\main\sound_lj.html:34
+#: .\main\templates\main\sound_nj.html:34 .\main\templates\main\sound_o.html:35
+#: .\main\templates\main\sound_rj.html:34 .\main\templates\main\sound_u.html:38
+#: .\main\templates\main\sound_u.html:40 .\main\templates\main\sound_y.html:35
+#: .\main\templates\main\sound_zj_sj.html:35
+#: .\main\templates\main\sound_zj_sj.html:43
 msgid "For example"
 msgstr ""
 
@@ -576,21 +736,24 @@ msgid ""
 "two sounds"
 msgstr ""
 
+#: .\main\templates\main\sound_b_p.html:32
+#: .\main\templates\main\sound_b_p.html:40
+#: .\main\templates\main\sound_g_k.html:33
+#: .\main\templates\main\sound_g_k.html:41
+msgid "English:"
+msgstr ""
+
 #: .\main\templates\main\sound_e.html:31 .\main\templates\main\sound_i.html:31
 #: .\main\templates\main\sound_o.html:31 .\main\templates\main\sound_u.html:31
 msgid "English (American):"
 msgstr ""
 
 #: .\main\templates\main\sound_e.html:37
-msgid "stands for two sounds"
-msgstr ""
-
-#: .\main\templates\main\sound_i.html:35
-msgid "In this case the i-sound always palatalise the consonant it follows."
+msgid "Stands for two sounds"
 msgstr ""
 
 #: .\main\templates\main\sound_i.html:39
-msgid "it always stands for two sounds"
+msgid "It always stands for two sounds"
 msgstr ""
 
 #: .\main\templates\main\sound_u.html:37
@@ -599,9 +762,101 @@ msgid ""
 "palatalised."
 msgstr ""
 
+#: .\main\templates\main\sound_y.html:31
+msgid "Czech:"
+msgstr ""
+
+#: .\main\templates\main\sound_y.html:32
+msgid ""
+"It differs from English and German [ɪ]: the Ukrainian sound is more back"
+msgstr ""
+
+#: .\main\templates\main\sound_zj_sj.html:27
+msgid "i"
+msgstr ""
+
 #: .\main\views.py:19
 msgid "привіт"
 msgstr "hello"
+
+#~ msgid ""
+#~ "\n"
+#~ "      В українській мові всього 6 голосних. Ви можете побачити їх в "
+#~ "таблиці нижче, позначених за допомогою\n"
+#~ "      фонетичних символів МФА (міжнародного фонетичного алфавіту, англ. — "
+#~ "ІРА).\n"
+#~ "      За положенням язика відносно горизонтальної осі вони належать до "
+#~ "одного з\n"
+#~ "      <strong><i>двох рядів</i></strong>: <i>переднього</i> або "
+#~ "<i>заднього</i>. Якщо голосний належить\n"
+#~ "      до переднього ряду, це означає, що під час  його вимови тіло язика "
+#~ "подається вперед. Якщо ж голосний\n"
+#~ "      належить до заднього ряду, то тіло язика під час його вимови "
+#~ "відтягнене назад, до стінки глотки.\n"
+#~ "      "
+#~ msgstr ""
+#~ "\n"
+#~ "      There are 6 vowels in Ukrainian. You can see them in the table "
+#~ "below, denoted with\n"
+#~ "      IPA symbols (IPA - International Phonetic Alphabet).\n"
+#~ "      <br> Vowel length is not contrastive, so there are no short or long "
+#~ "vowels.\n"
+#~ "      <br> Based on the tongue's position in respect to the "
+#~ "<i><strong>horizontal axis </strong></i> they are\n"
+#~ "      divided into <i><strong>front</strong></i>\n"
+#~ "      and <i><strong>back vowels</strong></i>. In the table below one can "
+#~ "see that sounds [i], [ɪ] and [ɛ]\n"
+#~ "      are <i>front</i>, whereas [u], [ɔ] and [ɑ] are <i>back vowels</i>. "
+#~ "It means that during pronunciation\n"
+#~ "      of the first group of vowels the tongue's body lays forwards. And "
+#~ "the second group of the vowels\n"
+#~ "      is pronounced with the tongue's body in the back of the oral "
+#~ "cavity.\n"
+#~ "    "
+
+#~ msgid ""
+#~ "\n"
+#~ "      Також українські голосні розрізняють за <strong><i>ступенем "
+#~ "підняття язика</i></strong> до\n"
+#~ "      твердого піднебіння під час їх вимови. В деяких джерелах таку "
+#~ "класифікацію здійснюють,\n"
+#~ "      залежно від ступеня закритості щелеп під час вимови голосних. Тоді "
+#~ "звуки поділяють на відкриті,\n"
+#~ "      середні та закриті. Ступінь підняття язика напряму пов'язаний із "
+#~ "відкритістю/закритістю звука,\n"
+#~ "      тому наведені класифікації є взаємозамінними. В українській "
+#~ "науковій літературі поширеною є\n"
+#~ "      класифікація за ступенем підняття язика, тому саме з нею ви можете "
+#~ "ознайомитися в розміщенній\n"
+#~ "      нижче таблиці.\n"
+#~ "      "
+#~ msgstr ""
+#~ "\n"
+#~ "      The position of the tongue with respect to the <i><strong>vertical "
+#~ "axis</strong></i>,\n"
+#~ "      namely it's <i>height</i> during pronunciation, distinguishes "
+#~ "Ukrainian vowels as well. In the table\n"
+#~ "      below one can see that there are <i><strong>low </strong></i> "
+#~ "([ɑ]), <i><strong>mid</strong></i> ([ɛ],\n"
+#~ "      [ɔ]), <i><strong>high-mid </strong></i> ([ɪ]) and <i><strong>high </"
+#~ "strong></i> ([i], [u]) vowels\n"
+#~ "      in Ukrainian. It's also referred as close/open distinction between "
+#~ "vowels, as the height of the tongue\n"
+#~ "      directly affects the closeness of a vowel.\n"
+#~ "    "
+
+#~ msgid ""
+#~ "\n"
+#~ "      <i>Для того, аби переглянути інформацію про особливості вимови "
+#~ "звука, який вас цікавить, натисніть\n"
+#~ "      на нього курсором.</i>\n"
+#~ "      "
+#~ msgstr ""
+#~ "\n"
+#~ "      In order to <strong>watch details about the pronunciation</strong> "
+#~ "of each sound press it's symbol\n"
+#~ "      in the table.\n"
+#~ "    "
 
 #~ msgid "Мова:"
 #~ msgstr "Language:"

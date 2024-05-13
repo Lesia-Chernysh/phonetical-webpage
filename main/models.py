@@ -10,6 +10,7 @@ class InformationAboutVowels(models.Model):
     eng_description = models.TextField('англ. опис вимови', default='')
     image = models.ImageField('ілюстрація вимови', upload_to="media")
     audio = models.FileField(upload_to='documents/', default='')
+    male_audio = models.FileField(upload_to='documents/', default='')
 
 
 class InformationAboutConsonants(models.Model):
@@ -22,6 +23,7 @@ class InformationAboutConsonants(models.Model):
     eng_description = models.TextField('англ. опис вимови', default='')
     image = models.ImageField('ілюстрація вимови', upload_to="media")
     audio = models.FileField(upload_to='documents/', default='')
+    male_audio = models.FileField(upload_to='documents/', default='')
 
     def __str__(self):
         return self.sound

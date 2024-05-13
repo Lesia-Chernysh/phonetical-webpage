@@ -1,6 +1,45 @@
 {% extends 'main/pattern_for_consonants.html' %}
+{% load i18n %}
 {% load static %}
+
+{% block lang_switch %}
+<div class="dropleft">
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {% translate "Lang.:" %}
+      </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+
+            {% for lang in languages %}
+                <li>
+                    <a class="dropdown-item" href="/{{lang.code}}/sound_ɛ">
+                        {{ lang.name_local }}
+                    </a>
+                </li>
+            {%endfor%}
+        </ul>
+    </div>
+{% endblock %}
 
 {% block sound %}[b] i [p]{% endblock %}
 {% block phoneme %}/b/ i /p/{% endblock %}
 {% block letter %}б i п{% endblock %}
+
+{% block examples %}<i>{% translate "In other languages:" %}</i>
+{% translate "English:" %} similar to English /b/, but Ukrainian sound is not aspirated;
+{% translate "German:" %} /b/ {% translate "in" %} <i><b>B</b>ett</i>, <i><b>B</b>uch</i>.
+
+<i>{% translate "Pertinent letter/s" %}</i>: <b>б</b>.
+{% translate "For example" %}: <b>б</b>ути /'<b>b</b>ut̪ɪ/ — to be.
+{% endblock %}
+
+{% block examples2 %}<i>In other languages:</i>
+{% translate "English:" %} similar to English /p/, but Ukrainian sound is not aspirated;
+{% translate "German:" %} /p/ {% translate "in" %} <i><b>P</b>ark</i>.
+
+<i>Pertinent letter/s</i>: <b>п</b>.
+{% translate "For example" %}: <b>п</b>исати /<b>p</b>ɪ'sɑt̪ɪ/ — to write.
+{% endblock %}
